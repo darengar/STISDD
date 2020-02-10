@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9c24fba5b2d44b99bb772068936c4953" Name="Diagram1">
+        <EntityTypeShape EntityType="EMRDBModel.Admission" Width="1.5" PointX="5.25" PointY="22.875" />
+        <EntityTypeShape EntityType="EMRDBModel.Cardiology" Width="1.5" PointX="10.5" PointY="27" />
+        <EntityTypeShape EntityType="EMRDBModel.ChiefComplaint" Width="1.5" PointX="16.5" PointY="33.5" />
+        <EntityTypeShape EntityType="EMRDBModel.Clinic" Width="1.5" PointX="3" PointY="31.625" />
+        <EntityTypeShape EntityType="EMRDBModel.Collegian" Width="1.5" PointX="6" PointY="35.5" />
+        <EntityTypeShape EntityType="EMRDBModel.Department" Width="1.5" PointX="3" PointY="24.625" />
+        <EntityTypeShape EntityType="EMRDBModel.Digestion" Width="1.5" PointX="10.5" PointY="32.875" />
+        <EntityTypeShape EntityType="EMRDBModel.Doctor" Width="1.5" PointX="3" PointY="27.375" />
+        <EntityTypeShape EntityType="EMRDBModel.FollowUp" Width="1.5" PointX="7.5" PointY="32.125" />
+        <EntityTypeShape EntityType="EMRDBModel.HistoryDiseas" Width="1.5" PointX="7.125" PointY="20.5" />
+        <EntityTypeShape EntityType="EMRDBModel.Hospitalization" Width="1.5" PointX="8.25" PointY="26.875" />
+        <EntityTypeShape EntityType="EMRDBModel.Hospital" Width="1.5" PointX="0.75" PointY="27.875" />
+        <EntityTypeShape EntityType="EMRDBModel.Internal" Width="1.5" PointX="13.5" PointY="31.875" />
+        <EntityTypeShape EntityType="EMRDBModel.Laboratory" Width="1.5" PointX="16.5" PointY="25.75" />
+        <EntityTypeShape EntityType="EMRDBModel.Lung" Width="1.5" PointX="16.5" PointY="21.875" />
+        <EntityTypeShape EntityType="EMRDBModel.Patient" Width="1.5" PointX="3" PointY="20.5" />
+        <EntityTypeShape EntityType="EMRDBModel.PhysicalExamination" Width="1.5" PointX="13.5" PointY="27.625" />
+        <EntityTypeShape EntityType="EMRDBModel.Visit" Width="1.5" PointX="5.25" PointY="26.75" />
+        <EntityTypeShape EntityType="EMRDBModel.VitalSign" Width="1.5" PointX="10.5" PointY="22.75" />
+        <EntityTypeShape EntityType="EMRDBModel.Woman" Width="1.5" PointX="13.5" PointY="19.75" />
+        <AssociationConnector Association="EMRDBModel.FK_Admissions_Clinics" />
+        <AssociationConnector Association="EMRDBModel.FK_Admissions_Departments" />
+        <AssociationConnector Association="EMRDBModel.FK_Admissions_Patients" />
+        <AssociationConnector Association="EMRDBModel.FK_Cardiologys_Hospitalizations" />
+        <AssociationConnector Association="EMRDBModel.FK_Cardiologys_Visits" />
+        <AssociationConnector Association="EMRDBModel.FK_ChiefComplaints_Hospitalizations" />
+        <AssociationConnector Association="EMRDBModel.FK_ChiefComplaints_Visits" />
+        <AssociationConnector Association="EMRDBModel.FK_Clinics_Hospitals" />
+        <AssociationConnector Association="EMRDBModel.FK_Hospitalizations_Collegians" />
+        <AssociationConnector Association="EMRDBModel.FK_Visits_Collegians" />
+        <AssociationConnector Association="EMRDBModel.FK_Departments_Hospitals" />
+        <AssociationConnector Association="EMRDBModel.FK_Digestions_Hospitalizations" />
+        <AssociationConnector Association="EMRDBModel.FK_Digestions_Visits" />
+        <AssociationConnector Association="EMRDBModel.FK_Doctors_Hospitals" />
+        <AssociationConnector Association="EMRDBModel.FK_Hospitalizations_Doctors" />
+        <AssociationConnector Association="EMRDBModel.FK_Visits_Doctors" />
+        <AssociationConnector Association="EMRDBModel.FK_FollowUps_Visits" />
+        <AssociationConnector Association="EMRDBModel.FK_Internals_Hospitalizations" />
+        <AssociationConnector Association="EMRDBModel.FK_Laboratories_Hospitalizations" />
+        <AssociationConnector Association="EMRDBModel.FK_Lungs_Hospitalizations" />
+        <AssociationConnector Association="EMRDBModel.FK_PhysicalExaminations_Hospitalizations" />
+        <AssociationConnector Association="EMRDBModel.FK_VitalSigns_Hospitalizations" />
+        <AssociationConnector Association="EMRDBModel.FK_Womans_Hospitalizations" />
+        <AssociationConnector Association="EMRDBModel.FK_Internals_Visits" />
+        <AssociationConnector Association="EMRDBModel.FK_Laboratories_Visits" />
+        <AssociationConnector Association="EMRDBModel.FK_Lungs_Visits" />
+        <AssociationConnector Association="EMRDBModel.FK_PhysicalExaminations_Visits" />
+        <AssociationConnector Association="EMRDBModel.FK_VitalSigns_Visits" />
+        <AssociationConnector Association="EMRDBModel.FK_Womens_Visits" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

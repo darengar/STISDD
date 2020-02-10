@@ -1,0 +1,30 @@
+﻿@using EMR.Models
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<EMR.Models.EMRInternalView>
+
+@{
+    ViewBag.Title = "داخلی";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+</div>
+
+<h2>بیماران بخش داخلی</h2>
+
+
+
+<p>
+   @Html.ActionLink("بازگشت به درمانگاهها", "OutPatient", "Home", new { Area = "" }, new { @class = "btn btn-danger" })    
+</p>
+
+<div id="content">
+    @Html.Partial("_Internal", Model)
+</div>
+
+<p>
+   @Html.ActionLink("بازگشت به درمانگاهها", "OutPatient", "Home", new { Area = "" }, new { @class = "btn btn-danger" })    
+</p>
+

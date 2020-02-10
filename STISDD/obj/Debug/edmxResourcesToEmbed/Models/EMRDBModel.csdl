@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMRDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AspNetUsers" EntityType="EMRDBModel.AspNetUser" />
+    <EntitySet Name="Collegians" EntityType="EMRDBModel.Collegian" />
+    <EntitySet Name="Doctors" EntityType="EMRDBModel.Doctor" />
+    <EntitySet Name="Hospitals" EntityType="EMRDBModel.Hospital" />
+    <EntitySet Name="Universities" EntityType="EMRDBModel.University" />
+    <AssociationSet Name="FK_Collegians_Universities" Association="EMRDBModel.FK_Collegians_Universities">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="Collegian" EntitySet="Collegians" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctors_Hospitals" Association="EMRDBModel.FK_Doctors_Hospitals">
+      <End Role="Hospital" EntitySet="Hospitals" />
+      <End Role="Doctor" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hospitals_Universities" Association="EMRDBModel.FK_Hospitals_Universities">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="Hospital" EntitySet="Hospitals" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Discriminator" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Collegian">
+    <Key>
+      <PropertyRef Name="CollegianId" />
+    </Key>
+    <Property Name="CollegianId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="76" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="StudentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CellPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="LoginId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="EMail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="University" Relationship="EMRDBModel.FK_Collegians_Universities" FromRole="Collegian" ToRole="University" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="DoctorId" />
+    </Key>
+    <Property Name="DoctorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HospitalId" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="76" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CellPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoginId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Hospital" Relationship="EMRDBModel.FK_Doctors_Hospitals" FromRole="Doctor" ToRole="Hospital" />
+  </EntityType>
+  <EntityType Name="Hospital">
+    <Key>
+      <PropertyRef Name="HospitalId" />
+    </Key>
+    <Property Name="HospitalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Doctors" Relationship="EMRDBModel.FK_Doctors_Hospitals" FromRole="Hospital" ToRole="Doctor" />
+    <NavigationProperty Name="University" Relationship="EMRDBModel.FK_Hospitals_Universities" FromRole="Hospital" ToRole="University" />
+  </EntityType>
+  <EntityType Name="University">
+    <Key>
+      <PropertyRef Name="UniversityId" />
+    </Key>
+    <Property Name="UniversityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Collegians" Relationship="EMRDBModel.FK_Collegians_Universities" FromRole="University" ToRole="Collegian" />
+    <NavigationProperty Name="Hospitals" Relationship="EMRDBModel.FK_Hospitals_Universities" FromRole="University" ToRole="Hospital" />
+  </EntityType>
+  <Association Name="FK_Collegians_Universities">
+    <End Type="EMRDBModel.University" Role="University" Multiplicity="0..1" />
+    <End Type="EMRDBModel.Collegian" Role="Collegian" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="UniversityId" />
+      </Principal>
+      <Dependent Role="Collegian">
+        <PropertyRef Name="UniversityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctors_Hospitals">
+    <End Type="EMRDBModel.Hospital" Role="Hospital" Multiplicity="0..1" />
+    <End Type="EMRDBModel.Doctor" Role="Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospital">
+        <PropertyRef Name="HospitalId" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="HospitalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hospitals_Universities">
+    <End Type="EMRDBModel.University" Role="University" Multiplicity="0..1" />
+    <End Type="EMRDBModel.Hospital" Role="Hospital" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="UniversityId" />
+      </Principal>
+      <Dependent Role="Hospital">
+        <PropertyRef Name="UniversityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

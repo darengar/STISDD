@@ -1,0 +1,27 @@
+﻿@using EMR.Models
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<EMR.Models.EMRCardiologyView>
+@{
+    ViewBag.Title = "قلب";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+</div>
+
+<h2>بیماران درمانگاه قلب</h2>
+
+<p>
+    @Html.ActionLink("بازگشت به درمانگاهها", "OutPatient", "Home", new { Area="" }, new { @class = "btn btn-danger" })    
+</p>
+
+<div id="content">
+    @Html.Partial("_Cardiology", Model)
+</div>
+
+<p>
+    @Html.ActionLink("بازگشت به درمانگاهها", "OutPatient", "Home", new { Area="" }, new { @class = "btn btn-danger" })    
+</p>
+

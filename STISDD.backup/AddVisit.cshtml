@@ -1,0 +1,208 @@
+﻿@model EMR.Models.Visit
+
+@{
+    ViewBag.Title = "AddVisit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+Html.ActionLink("معاینه بیمار", "AddVisit", "Visit", new { patientId = item.PatientId }, null)
+<h2>AddVisit</h2>
+
+<br />
+@Html.ActionLink("بازگشت", "Index", "Patient", new { }, new { style = "color:red; font-size: 18px;" })
+<br />
+
+@using (Html.BeginForm())
+{
+    <div>
+        <table>
+            @*<tr>
+                <td colspan="10">@Html.Label("بخش و پزشک : ", new { style = "color: Blue;" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("بیمارستان", new { style = "font-size: 12px;" })</td>
+                <td>@Html.DropDownList("HospitalId", (SelectList)ViewBag.HospitalId, "بیمارستان ...", new { style = "width: 140px; background-color: #f3a353;" })</td>
+                <td>@Html.Label("بخش", new { style = "font-size: 12px;" })</td>
+                <td>@Html.DropDownList("DepartmentId", (SelectList)ViewBag.DepartmentId, "بخش ...", new { style = "width: 140px; background-color: #f3a353;" })</td>
+                <td>@Html.Label("پزشک", new { style = "font-size: 12px;" })</td>
+                <td>@Html.DropDownList("DoctorId", (SelectList)ViewBag.DoctorId, "پزشک ...", new { style = "width: 140px; background-color: #f3a353;" })</td>
+                <td>@Html.Label("تاریخ بستری", new { style = "font-size: 12px;" })</td>
+                <td colspan="3">@Html.TextBox("DateOfStay", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td colspan="10">@Html.Label("مشخصات بیمار : ", new { style = "color: Blue;" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("نام", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("FirstName", null, string.Empty, new { })</td>
+                <td>@Html.Label("نام خانوادگی", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("LastName", null, string.Empty, new { })</td>
+                <td>@Html.Label("جنسیت", new { style = "font-size: 12px;" })</td>
+                <td>@Html.DropDownList("Sex", (SelectList)ViewBag.Sex, "جنسیت ...", new { style = "width: 140px; background-color: #f3a353;" })</td>
+                <td>@Html.Label("تاریخ تولد", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("BirthDate", null, string.Empty, new { })</td>
+                <td>@Html.Label("کد ملی", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("NationalId", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("تلفن", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Phone", null, string.Empty, new { })</td>
+                <td>@Html.Label("تلفن همراه", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("CellPhone", null, string.Empty, new { })</td>
+                <td>@Html.Label("آدرس", new { style = "font-size: 12px;" })</td>
+                <td colspan="5">@Html.TextBox("Address", null, string.Empty, new { style = "width: 300px;" })</td>
+            </tr>*@
+            <tr>
+                <td colspan="10">@Html.Label("CC : ", new { Style = "color: Blue;" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Chest Pain", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("ChestPain", null, string.Empty, new { })</td>
+                <td>@Html.Label("Dyspnea", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Dyspnea", null, string.Empty, new { })</td>
+                <td>@Html.Label("Syncope", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Syncope", null, string.Empty, new { })</td>
+                <td>@Html.Label("Palpitation", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Palpitation", null, string.Empty, new { })</td>
+                <td>@Html.Label("Edema", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Edema", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Etc", new { style = "font-size: 12px;" })</td>
+                <td colspan="9">@Html.TextBox("Etc", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td colspan="10">@Html.Label("PMH : ", new { Style = "color: Blue;" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Description", new { style = "font-size: 12px;" })</td>
+                <td colspan="9">@Html.TextArea("PMHDescription", null, 3, 100, new { })</td>
+            </tr>
+            <tr>
+                <td colspan="10">@Html.Label("PhE : ", new { Style = "color: Blue;" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Heart", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Heart", null, string.Empty, new { })</td>
+                <td>@Html.Label("Lung", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Lung", null, string.Empty, new { })</td>
+                <td>@Html.Label("Ext", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Ext", null, string.Empty, new { })</td>
+                <td>@Html.Label("ETC", new { style = "font-size: 12px;" })</td>
+                <td colspan="3">@Html.TextBox("PHEETC", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td colspan="10">@Html.Label("VS : ", new { Style = "color: Blue;" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("BP", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("BP", null, string.Empty, new { })</td>
+                <td>@Html.Label("HR", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("HR", null, string.Empty, new { })</td>
+                <td>@Html.Label("RR", new { style = "font-size: 12px;" })</td>
+                <td colspan="5">@Html.TextBox("RR", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td colspan="10">@Html.Label("LAB : ", new { Style = "color: Blue;" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("BUN", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("BUN", null, string.Empty, new { })</td>
+                <td>@Html.Label("Cr", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Cr", null, string.Empty, new { })</td>
+                <td>@Html.Label("Na", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Na", null, string.Empty, new { })</td>
+                <td>@Html.Label("K", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("K", null, string.Empty, new { })</td>
+                <td>@Html.Label("Ca", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Ca", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Mg", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Mg", null, string.Empty, new { })</td>
+                <td>@Html.Label("FBS", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("FBS", null, string.Empty, new { })</td>
+                <td>@Html.Label("MbA1C", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("MbA1C", null, string.Empty, new { })</td>
+                <td>@Html.Label("Chol", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Chol", null, string.Empty, new { })</td>
+                <td>@Html.Label("LDL", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("LDL", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("HDL", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("HDL", null, string.Empty, new { })</td>
+                <td>@Html.Label("TG", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("TG", null, string.Empty, new { })</td>
+                <td>@Html.Label("VitOMD3", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("VitOMD3", null, string.Empty, new { })</td>
+                <td>@Html.Label("CTnI", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("CTnI", null, string.Empty, new { })</td>
+                <td>@Html.Label("CKMB", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("CKMB", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("AST", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("AST", null, string.Empty, new { })</td>
+                <td>@Html.Label("ALT", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("ALT", null, string.Empty, new { })</td>
+                <td>@Html.Label("ALP", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("ALP", null, string.Empty, new { })</td>
+                <td>@Html.Label("BiL", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("BiL", null, string.Empty, new { })</td>
+                <td>@Html.Label("PSA", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("PSA", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("TSH", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("TSH", null, string.Empty, new { })</td>
+                <td>@Html.Label("T3", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("T3", null, string.Empty, new { })</td>
+                <td>@Html.Label("T4", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("T4", null, string.Empty, new { })</td>
+                <td>@Html.Label("T3RU", new { style = "font-size: 12px;" })</td>
+                <td colspan="3">@Html.TextBox("T3RU", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td colspan="10">@Html.Label("Heart : ", new { Style = "color: Blue;" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("ECG", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("ECG", null, string.Empty, new { })</td>
+                <td>@Html.Label("EchoCardiography", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("EchoCardiography", null, string.Empty, new { })</td>
+                <td>@Html.Label("Angiography", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Angiography", null, string.Empty, new { })</td>
+                <td>@Html.Label("EST1", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("EST1", null, string.Empty, new { })</td>
+                <td>@Html.Label("SPECTMPi", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("SPECTMPi", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Diagnosis", new { style = "font-size: 12px;" })</td>
+                <td colspan="3">@Html.TextArea("Diagnosis", null, 3, 100, new { })</td>
+                <td>@Html.Label("Plan", new { style = "font-size: 12px;" })</td>
+                <td colspan="5">@Html.TextArea("Plan", null, 3, 100, new { })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Assistant", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Assistant", null, string.Empty, new { })</td>
+                <td>@Html.Label("Entern", new { style = "font-size: 12px;" })</td>
+                <td>@Html.TextBox("Entern", null, string.Empty, new { })</td>
+                <td>@Html.Label("Trainee", new { style = "font-size: 12px;" })</td>
+                <td colspan="5">@Html.TextBox("Trainee", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td colspan="10">@Html.Label("FollowUp : ", new { Style = "color: Blue;" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Description", new { style = "font-size: 12px;" })</td>
+                <td colspan="3">@Html.TextArea("Description", null, 3, 300, new { })</td>
+                <td>@Html.Label("Date", new { style = "font-size: 12px;" })</td>
+                <td colspan="5">@Html.TextBox("DateFllowUp", null, string.Empty, new { })</td>
+            </tr>
+            <tr>
+                <td colspan="10" style="padding: 20px;"><input type="submit" value="‌‌ثبت اطلاعات بیمار" /></td>
+            </tr>
+        </table>
+    </div>
+}

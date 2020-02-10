@@ -1,0 +1,78 @@
+﻿@model EMR.Models.ChiefComplaint
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="myModalLabel">Edit Chief Complaint</h4>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="modal-body">
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.ChiefComplaintId)
+            @Html.HiddenFor(model => model.VisitId)
+            @Html.HiddenFor(model => model.LeadTime)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ChestPain, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ChestPain)
+                    @Html.ValidationMessageFor(model => model.ChestPain)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Dyspnea, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Dyspnea)
+                    @Html.ValidationMessageFor(model => model.Dyspnea)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Syncope, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Syncope)
+                    @Html.ValidationMessageFor(model => model.Syncope)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Palpitation, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Palpitation)
+                    @Html.ValidationMessageFor(model => model.Palpitation)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Edema, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Edema)
+                    @Html.ValidationMessageFor(model => model.Edema)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ETC, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ETC)
+                    @Html.ValidationMessageFor(model => model.ETC)
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">Cancel</button>
+        <input class="btn btn-primary" type="submit" value="Save" />
+    </div>
+}
+
+
+

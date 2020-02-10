@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD4DEE2C-FFAB-4345-8387-4553F5B98CF0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EMR</RootNamespace>
+    <AssemblyName>EMR</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.6.4\lib\net40\Rotativa.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Emeregency\EmeregencyAreaRegistration.cs" />
+    <Compile Include="Areas\InPatient\Controllers\CardiologyController.cs" />
+    <Compile Include="Areas\InPatient\Controllers\ChiefComplaintController.cs" />
+    <Compile Include="Areas\InPatient\Controllers\HistoryDiseasController.cs" />
+    <Compile Include="Areas\InPatient\Controllers\LaboratoryController.cs" />
+    <Compile Include="Areas\InPatient\Controllers\PhysicalExaminationController.cs" />
+    <Compile Include="Areas\InPatient\Controllers\VitalSignController.cs" />
+    <Compile Include="Areas\InPatient\HospitalizationAreaRegistration.cs" />
+    <Compile Include="Areas\InPatient\ViewModels\VisitItem.cs" />
+    <Compile Include="Areas\OutPatient\ClinicAreaRegistration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\OutPatient\Controllers\CardiologyController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\OutPatient\Controllers\DigestionController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\OutPatient\Controllers\InternalController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\OutPatient\Controllers\LungController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\OutPatient\Controllers\GynocologyController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\OutPatient\ViewModels\VisitItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CollegianController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\MyHelpers.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdmData.cs">
+      <DependentUpon>HISDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdmID.cs">
+      <DependentUpon>HISDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admission.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cardiology.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiefComplaint.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Collegian.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Digestion.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Doctor.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMRCardiologyView.cs">
+      <DependentUpon>HISDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMRDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EMRDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMRDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMRDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EMRDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMRDigestionView.cs">
+      <DependentUpon>HISDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMRGynocologyView.cs">
+      <DependentUpon>HISDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMRInternalView.cs">
+      <DependentUpon>HISDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMRLungView.cs">
+      <DependentUpon>HISDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FollowUp.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gynocology.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HISDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HISDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HISDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HISDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HISDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HISDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HistoryDiseas.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hospital.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Internal.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KindOfTherapy.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Laboratory.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Lung.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Part_List.cs">
+      <DependentUpon>HISDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Patient.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhysicalExamination.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\University.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Visit.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VitalSign.cs">
+      <DependentUpon>EMRDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersianCulture\DateTimeActionFilter.cs" />
+    <Compile Include="PersianCulture\DateTimeModelBinder.cs" />
+    <Compile Include="PersianCulture\PersianCulture.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\OutPatient\Views\Cardiology\Create.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Cardiology\Edit.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Cardiology\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\OutPatient\Views\Cardiology\PastVisit.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Cardiology\VisitReport.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Cardiology\_Cardiology.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\OutPatient\Views\Digestion\Create.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Digestion\Edit.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Digestion\Index.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Digestion\PastVisit.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Digestion\VisitReport.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Digestion\_Digestion.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\OutPatient\Views\Internal\Create.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Internal\Edit.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Internal\Index.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Internal\PastVisit.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Internal\VisitReport.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Internal\_Internal.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\OutPatient\Views\Lung\Create.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Lung\Edit.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Lung\Index.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Lung\PastVisit.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Lung\VisitReport.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Lung\_Lung.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\OutPatient\Views\web.config" />
+    <Content Include="Areas\OutPatient\Views\Gynocology\Create.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Gynocology\Edit.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Gynocology\Index.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Gynocology\PastVisit.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Gynocology\VisitReport.cshtml" />
+    <Content Include="Areas\OutPatient\Views\Gynocology\_Gynocology.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\core.css" />
+    <Content Include="Content\Help_CSS\reset.css" />
+    <Content Include="Content\leftSite.css" />
+    <Content Include="Content\Help_CSS\style.css" />
+    <Content Include="Content\Home_HoverEffect\demo.css" />
+    <Content Include="Content\Home_HoverEffect\normalize.css" />
+    <Content Include="Content\Home_HoverEffect\set1.css" />
+    <Content Include="Content\Menu\styles.css" />
+    <Content Include="Content\OrginalHoverEffect\demo.css" />
+    <Content Include="Content\OrginalHoverEffect\reset.css" />
+    <Content Include="Content\OrginalHoverEffect\style1.css" />
+    <Content Include="Content\OrginalHoverEffect\style_common.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Image\256963.gif" />
+    <Content Include="Image\Baner_Home_1.jpg" />
+    <Content Include="Image\body-1.jpg" />
+    <Content Include="Image\body-5.jpg" />
+    <Content Include="Image\Button_img\Administrator_Button.jpg" />
+    <Content Include="Image\Button_img\Administrator_Button_MP.jpg" />
+    <Content Include="Image\Button_img\Clinic.jpg" />
+    <Content Include="Image\Button_img\Digestion_n.jpg" />
+    <Content Include="Image\Button_img\Heart_n.jpg" />
+    <Content Include="Image\Button_img\Hospitalization.jpg" />
+    <Content Include="Image\Button_img\Internal_n.jpg" />
+    <Content Include="Image\Button_img\Lung_n.jpg" />
+    <Content Include="Image\Button_img\Womans_n.jpg" />
+    <Content Include="Image\cardio.1 - Copy.jpg" />
+    <Content Include="Image\Content-680.jpg" />
+    <Content Include="Image\Content2-680.jpg" />
+    <Content Include="Image\EMR_Login.jpg" />
+    <Content Include="Image\Logo.png" />
+    <Content Include="Image\New_Body02.jpg" />
+    <Content Include="Image\OrginalHoverEffect\bgimg.jpg" />
+    <Content Include="Image\OrginalHoverEffect\white_texture.jpg" />
+    <Content Include="Image\Register.jpg" />
+    <Content Include="note.txt" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
+    <Content Include="Scripts\bootstrap-hover-dropdown.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="App_Browsers\qt.browser" />
+    <EntityDeploy Include="Models\HISDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HISDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\HISDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HISDBModel.edmx</DependentUpon>
+      <LastGenOutput>HISDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\HISDBModel.edmx.diagram">
+      <DependentUpon>HISDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\HISDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HISDBModel.edmx</DependentUpon>
+      <LastGenOutput>HISDBModel.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\EMRDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EMRDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EMRDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EMRDBModel.edmx</DependentUpon>
+      <LastGenOutput>EMRDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EMRDBModel.edmx.diagram">
+      <DependentUpon>EMRDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\EMRDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EMRDBModel.edmx</DependentUpon>
+      <LastGenOutput>EMRDBModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Areas\InPatient\Views\Cardiology\DHPatient.cshtml" />
+    <Content Include="Areas\InPatient\Views\Cardiology\Hospitalization.cshtml" />
+    <Content Include="Areas\InPatient\Views\Cardiology\_Create.cshtml" />
+    <Content Include="Areas\InPatient\Views\Cardiology\_Delete.cshtml" />
+    <Content Include="Areas\InPatient\Views\Cardiology\_Details.cshtml" />
+    <Content Include="Areas\InPatient\Views\Cardiology\_DHPatient.cshtml" />
+    <Content Include="Areas\InPatient\Views\Cardiology\_Edit.cshtml" />
+    <Content Include="Areas\InPatient\Views\Cardiology\_Index.cshtml" />
+    <Content Include="Areas\InPatient\Views\ChiefComplaint\_Details.cshtml" />
+    <Content Include="Areas\InPatient\Views\ChiefComplaint\_Edit.cshtml" />
+    <Content Include="Areas\InPatient\Views\ChiefComplaint\_Index.cshtml" />
+    <Content Include="Areas\InPatient\Views\HistoryDiseas\_Details.cshtml" />
+    <Content Include="Areas\InPatient\Views\HistoryDiseas\_Edit.cshtml" />
+    <Content Include="Areas\InPatient\Views\HistoryDiseas\_Index.cshtml" />
+    <Content Include="Areas\InPatient\Views\Laboratory\_Create.cshtml" />
+    <Content Include="Areas\InPatient\Views\Laboratory\_Delete.cshtml" />
+    <Content Include="Areas\InPatient\Views\Laboratory\_Details.cshtml" />
+    <Content Include="Areas\InPatient\Views\Laboratory\_Edit.cshtml" />
+    <Content Include="Areas\InPatient\Views\Laboratory\_Index.cshtml" />
+    <Content Include="Areas\InPatient\Views\PhysicalExamination\_Create.cshtml" />
+    <Content Include="Areas\InPatient\Views\PhysicalExamination\_Delete.cshtml" />
+    <Content Include="Areas\InPatient\Views\PhysicalExamination\_Details.cshtml" />
+    <Content Include="Areas\InPatient\Views\PhysicalExamination\_Edit.cshtml" />
+    <Content Include="Areas\InPatient\Views\PhysicalExamination\_Index.cshtml" />
+    <Content Include="Areas\InPatient\Views\VitalSign\_Create.cshtml" />
+    <Content Include="Areas\InPatient\Views\VitalSign\_Delete.cshtml" />
+    <Content Include="Areas\InPatient\Views\VitalSign\_Details.cshtml" />
+    <Content Include="Areas\InPatient\Views\VitalSign\_Edit.cshtml" />
+    <Content Include="Areas\InPatient\Views\VitalSign\_Index.cshtml" />
+    <Content Include="Areas\InPatient\Views\web.config" />
+    <Content Include="Areas\InPatient\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Emeregency\Views\web.config" />
+    <None Include="Properties\PublishProfiles\emr.pubxml" />
+    <None Include="Properties\PublishProfiles\emrlocal.pubxml" />
+    <None Include="Properties\PublishProfiles\zxc.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-latest.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modalform.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Administrator.cshtml" />
+    <Content Include="Views\Home\Help.cshtml" />
+    <Content Include="Views\Shared\_Layout_Insert.cshtml" />
+    <Content Include="Views\Shared\_Layout_Limit.cshtml" />
+    <Content Include="Views\Shared\_Layout_Register.cshtml" />
+    <Content Include="Views\Shared\_Layout_TableScript.cshtml" />
+    <Content Include="Views\Collegian\Create.cshtml" />
+    <Content Include="Views\Collegian\Delete.cshtml" />
+    <Content Include="Views\Collegian\Edit.cshtml" />
+    <Content Include="Views\Collegian\Index.cshtml" />
+    <Content Include="Views\Doctor\Delete.cshtml" />
+    <Content Include="Views\Doctor\Edit.cshtml" />
+    <Content Include="Views\Doctor\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout_Home.cshtml" />
+    <Content Include="Views\Home\OutPatient.cshtml" />
+    <Content Include="Views\Home\InPatient.cshtml" />
+    <Content Include="Views\Shared\_Layout_Modal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Emeregency\Controllers\" />
+    <Folder Include="Areas\Emeregency\Models\" />
+    <Folder Include="Areas\Emeregency\Views\Shared\" />
+    <Folder Include="Areas\InPatient\Models\" />
+    <Folder Include="Areas\InPatient\Views\Shared\" />
+    <Folder Include="Areas\OutPatient\Models\" />
+    <Folder Include="Areas\OutPatient\Views\Shared\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1994</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1994/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

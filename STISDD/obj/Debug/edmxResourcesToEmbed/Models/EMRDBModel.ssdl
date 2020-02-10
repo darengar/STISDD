@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMRDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Collegians">
+    <Key>
+      <PropertyRef Name="CollegianId" />
+    </Key>
+    <Property Name="CollegianId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="25" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="76" StoreGeneratedPattern="Computed" />
+    <Property Name="StudentId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="CellPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="LoginId" Type="nvarchar" MaxLength="128" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Doctors">
+    <Key>
+      <PropertyRef Name="DoctorId" />
+    </Key>
+    <Property Name="DoctorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HospitalId" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="25" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="76" StoreGeneratedPattern="Computed" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="CellPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoginId" Type="nvarchar" MaxLength="128" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Hospitals">
+    <Key>
+      <PropertyRef Name="HospitalId" />
+    </Key>
+    <Property Name="HospitalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UniversityId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Universities">
+    <Key>
+      <PropertyRef Name="UniversityId" />
+    </Key>
+    <Property Name="UniversityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Collegians_Universities">
+    <End Role="Universities" Type="Self.Universities" Multiplicity="0..1" />
+    <End Role="Collegians" Type="Self.Collegians" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="UniversityId" />
+      </Principal>
+      <Dependent Role="Collegians">
+        <PropertyRef Name="UniversityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctors_Hospitals">
+    <End Role="Hospitals" Type="Self.Hospitals" Multiplicity="0..1" />
+    <End Role="Doctors" Type="Self.Doctors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitals">
+        <PropertyRef Name="HospitalId" />
+      </Principal>
+      <Dependent Role="Doctors">
+        <PropertyRef Name="HospitalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hospitals_Universities">
+    <End Role="Universities" Type="Self.Universities" Multiplicity="0..1" />
+    <End Role="Hospitals" Type="Self.Hospitals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="UniversityId" />
+      </Principal>
+      <Dependent Role="Hospitals">
+        <PropertyRef Name="UniversityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EMRDBModelStoreContainer">
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Collegians" EntityType="Self.Collegians" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctors" EntityType="Self.Doctors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hospitals" EntityType="Self.Hospitals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Universities" EntityType="Self.Universities" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Collegians_Universities" Association="Self.FK_Collegians_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="Collegians" EntitySet="Collegians" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctors_Hospitals" Association="Self.FK_Doctors_Hospitals">
+      <End Role="Hospitals" EntitySet="Hospitals" />
+      <End Role="Doctors" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hospitals_Universities" Association="Self.FK_Hospitals_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="Hospitals" EntitySet="Hospitals" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

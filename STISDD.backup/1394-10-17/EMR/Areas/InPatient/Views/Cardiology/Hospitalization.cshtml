@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "بستری بخش قلب";
+    Layout = "~/Views/Shared/_Layout_Modal.cshtml";
+}
+
+<div style="direction:ltr; padding-bottom: 80px;">
+    <div>
+        @Html.ActionLink("Back to Cardiology patients List", "DHPatient", "Cardiology", new { Area = "InPatient", ClinicId = ViewBag.ClinicId }, new { style = "color: Red; font-size: 18px;" })
+    </div>
+    
+    <div style="direction: rtl;">
+        <table>
+            <tr>
+                <td style="width: 70px; font-size: large; color: #4c6568; font-weight: 400;"> کلینیک : </td>
+                <td style="width: 200px; font-size: xx-large; color: #ea5858; font-weight: 600; float:right;"> @ViewBag.ClinicName </td>
+            </tr>
+            <tr>
+                <td style="width: 130px; font-size: large; color: #4c6568; font-weight: 400; ">گزارش معاینه بیمار :</td>
+                <td style="width: 250px; background-color: #82d1dc; font-size: xx-large; color: #ed1852; font-weight: 500; float: right; ">@ViewBag.PatientName</td>
+            </tr>
+        </table>
+        <br />
+
+    </div>
+
+    <div>
+        @Html.Partial("~/Areas/InPatient/Views/HistoryDiseas/_Index.cshtml", (EMR.Models.HistoryDiseas)ViewBag.HistoryDiseas)
+    </div>
+
+    <div>
+        @Html.Partial("~/Areas/InPatient/Views/ChiefComplaint/_Index.cshtml", (IEnumerable<EMR.Models.ChiefComplaint>)ViewBag.ChiefComplaint)
+    </div>
+
+    <div>
+        @Html.Partial("~/Areas/InPatient/Views/VitalSign/_Index.cshtml", (IEnumerable<EMR.Models.VitalSign>)ViewBag.VitalSign)
+    </div>
+
+    <div>
+        @Html.Partial("~/Areas/InPatient/Views/PhysicalExamination/_Index.cshtml", (IEnumerable<EMR.Models.PhysicalExamination>)ViewBag.PhysicalExamination)
+    </div>
+
+    <div>
+        @Html.Partial("~/Areas/InPatient/Views/Laboratory/_Index.cshtml", (IEnumerable<EMR.Models.Laboratory>)ViewBag.Laboratory)
+    </div>
+    
+    <div>
+        @Html.Partial("_Index", (IEnumerable<EMR.Models.Cardiology>)ViewBag.Cardiology)
+    </div>  
+</div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/modalform")
+    }

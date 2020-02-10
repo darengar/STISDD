@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HISDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdmData">
+          <Key>
+            <PropertyRef Name="Adm Code" />
+          </Key>
+          <Property Name="Adm Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID Code" Type="int" Nullable="false" />
+          <Property Name="Date" Type="nvarchar" MaxLength="16" />
+          <Property Name="Bast Date" Type="nvarchar" MaxLength="16" />
+          <Property Name="PType" Type="smallint" Nullable="false" />
+          <Property Name="Bimeh Code" Type="smallint" Nullable="false" />
+          <Property Name="Bimeh Num" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Part Code" Type="smallint" Nullable="false" />
+          <Property Name="Bed Code" Type="smallint" />
+          <Property Name="isDis" Type="bit" Nullable="false" />
+          <Property Name="DisDate" Type="nvarchar" MaxLength="16" />
+          <Property Name="Bimeh2 Code" Type="smallint" Nullable="false" />
+          <Property Name="Bimeh2 Num" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Police" Type="nvarchar" MaxLength="30" />
+          <Property Name="Pers Code" Type="smallint" Nullable="false" />
+          <Property Name="MName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MAdress" Type="nvarchar" MaxLength="200" />
+          <Property Name="Dr Code" Type="int" Nullable="false" />
+          <Property Name="From Hospital Code" Type="smallint" Nullable="false" />
+          <Property Name="To Hospital Code" Type="smallint" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="255" />
+          <Property Name="isBefore" Type="bit" Nullable="false" />
+          <Property Name="BeforeNum" Type="smallint" Nullable="false" />
+          <Property Name="BeforeBastNum" Type="smallint" Nullable="false" />
+          <Property Name="Diagnosis" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisPersonCode" Type="smallint" Nullable="false" />
+          <Property Name="DisType" Type="smallint" Nullable="false" />
+          <Property Name="DisAdvise" Type="nvarchar" MaxLength="50" />
+          <Property Name="BastDay" Type="smallint" Nullable="false" />
+          <Property Name="DieDate" Type="nvarchar" MaxLength="16" />
+          <Property Name="DieTimeStatus" Type="smallint" Nullable="false" />
+          <Property Name="AutopsyNum" Type="smallint" Nullable="false" />
+          <Property Name="HelpNum" Type="smallint" Nullable="false" />
+          <Property Name="NewOprType" Type="tinyint" Nullable="false" />
+          <Property Name="AdmWardCode" Type="smallint" Nullable="false" />
+          <Property Name="isBedAsign" Type="bit" Nullable="false" />
+          <Property Name="AgeGroup" Type="smallint" Nullable="false" />
+          <Property Name="isBedDis" Type="bit" Nullable="false" />
+          <Property Name="isMCard" Type="bit" Nullable="false" />
+          <Property Name="isEmerg" Type="bit" Nullable="false" />
+          <Property Name="MBimehCode" Type="smallint" Nullable="false" />
+          <Property Name="BimehEndDate" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="isBimehEndDate" Type="bit" Nullable="false" />
+          <Property Name="AdmPrePayPrice" Type="int" Nullable="false" />
+          <Property Name="HappenPlace" Type="nvarchar" MaxLength="255" />
+          <Property Name="Age" Type="smallint" Nullable="false" />
+          <Property Name="AgeMon" Type="smallint" Nullable="false" />
+          <Property Name="AgeDay" Type="tinyint" Nullable="false" />
+          <Property Name="isFix" Type="bit" Nullable="false" />
+          <Property Name="FixDate" Type="nvarchar" MaxLength="16" />
+          <Property Name="FixPersCode" Type="smallint" Nullable="false" />
+          <Property Name="Adress2" Type="nvarchar" MaxLength="50" />
+          <Property Name="isVIP" Type="bit" Nullable="false" />
+          <Property Name="PartServiceCode" Type="smallint" Nullable="false" />
+          <Property Name="MBimehNum" Type="nvarchar" MaxLength="20" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="13" />
+          <Property Name="isEmergCard" Type="bit" Nullable="false" />
+          <Property Name="EmergCardNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="BimehIntroStatus" Type="smallint" Nullable="false" />
+          <Property Name="BimehCtrlStatus" Type="smallint" Nullable="false" />
+          <Property Name="InDrCode" Type="int" Nullable="false" />
+          <Property Name="ReferType" Type="smallint" Nullable="false" />
+          <Property Name="BDate" Type="nvarchar" MaxLength="16" />
+          <Property Name="Bimeh3Code" Type="smallint" Nullable="false" />
+          <Property Name="Bimeh3Num" Type="nvarchar" MaxLength="30" />
+          <Property Name="DiagCode" Type="smallint" Nullable="false" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="MRelation" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmergStatus" Type="smallint" Nullable="false" />
+          <Property Name="Height" Type="float" />
+          <Property Name="Explain2" Type="nvarchar" MaxLength="255" />
+          <Property Name="InsState" Type="smallint" Nullable="false" />
+          <Property Name="InsSendDate" Type="nvarchar" MaxLength="16" />
+          <Property Name="InsRecDate" Type="nvarchar" MaxLength="16" />
+          <Property Name="InsState2" Type="smallint" Nullable="false" />
+          <Property Name="InsSendDate2" Type="nvarchar" MaxLength="16" />
+          <Property Name="InsRecDate2" Type="nvarchar" MaxLength="16" />
+          <Property Name="BimehSerialNo" Type="nvarchar" MaxLength="20" />
+          <Property Name="AdmBimehPageNum" Type="smallint" />
+          <Property Name="ReferNDr" Type="int" Nullable="false" />
+          <Property Name="ReferCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="BimehMandatoryType" Type="smallint" />
+          <Property Name="isNotAcceptYaraneh" Type="bit" Nullable="false" />
+          <Property Name="HamrahMobileNo" Type="nvarchar" MaxLength="20" />
+          <Property Name="SepasCompositionIDLab" Type="nvarchar" MaxLength="100" />
+          <Property Name="SepasCompositionIDBed" Type="nvarchar" MaxLength="100" />
+          <Property Name="SepasCompositionIDInpatient" Type="nvarchar" MaxLength="100" />
+          <Property Name="DisPersonalReason" Type="smallint" />
+          <Property Name="HusbandFamily" Type="nvarchar" MaxLength="50" />
+          <Property Name="HusbandName" Type="nvarchar" MaxLength="30" />
+          <Property Name="HusbandNationalCode" Type="nvarchar" MaxLength="11" />
+          <Property Name="BimehRelation" Type="smallint" />
+          <Property Name="BimehPersonCode" Type="smallint" />
+          <Property Name="CrisisStatus" Type="smallint" />
+          <Property Name="SepasCompositionIDDeath" Type="nvarchar" MaxLength="100" />
+          <Property Name="DisBailOutExplain" Type="nvarchar" MaxLength="255" />
+          <Property Name="SBimehSerialNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="PartCodeFirst" Type="smallint" Nullable="false" />
+          <Property Name="IsHistoryDone" Type="bit" />
+          <Property Name="DisOrderDate" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="AdmID">
+          <Key>
+            <PropertyRef Name="ID Code" />
+          </Key>
+          <Property Name="ID Code" Type="int" Nullable="false" />
+          <Property Name="Family" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Father" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Sex" Type="smallint" Nullable="false" />
+          <Property Name="ShNum" Type="nvarchar" MaxLength="30" />
+          <Property Name="Birth Date" Type="nvarchar" MaxLength="16" />
+          <Property Name="Birth Place" Type="int" Nullable="false" />
+          <Property Name="Sh Place" Type="int" Nullable="false" />
+          <Property Name="Married Code" Type="smallint" Nullable="false" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="255" />
+          <Property Name="Mazhab Code" Type="smallint" Nullable="false" />
+          <Property Name="Work" Type="smallint" Nullable="false" />
+          <Property Name="Work Place" Type="smallint" Nullable="false" />
+          <Property Name="Place" Type="nvarchar" MaxLength="50" />
+          <Property Name="SFamily" Type="nvarchar" MaxLength="50" />
+          <Property Name="SName" Type="nvarchar" MaxLength="30" />
+          <Property Name="SFather" Type="nvarchar" MaxLength="30" />
+          <Property Name="NationalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="20" />
+          <Property Name="EMailAddress" Type="nvarchar" MaxLength="30" />
+          <Property Name="EmergCardNum" Type="nvarchar" MaxLength="10" />
+          <Property Name="BloodGroup" Type="smallint" />
+          <Property Name="CountryCode" Type="smallint" Nullable="false" />
+          <Property Name="DiseaseTag" Type="smallint" Nullable="false" />
+          <Property Name="Nationality" Type="smallint" Nullable="false" />
+          <Property Name="PatientUID" Type="nvarchar" MaxLength="100" />
+          <Property Name="StudyDegree" Type="smallint" Nullable="false" />
+          <Property Name="StayType" Type="smallint" Nullable="false" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Part-List">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Explain" Type="nvarchar" MaxLength="50" />
+          <Property Name="Group Code" Type="smallint" Nullable="false" />
+          <Property Name="Type" Type="smallint" Nullable="false" />
+          <Property Name="PricePartCode" Type="smallint" Nullable="false" />
+          <Property Name="ADSCode" Type="smallint" Nullable="false" />
+          <Property Name="ADSBedCount" Type="smallint" Nullable="false" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="FloorNo" Type="smallint" Nullable="false" />
+          <Property Name="ClinicGroupCode" Type="smallint" Nullable="false" />
+          <Property Name="LinkAcntCode" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="LinkAcntHPartCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="isOpr" Type="bit" Nullable="false" />
+          <Property Name="isBabyAdm" Type="bit" Nullable="false" />
+          <Property Name="PercasePartCode" Type="smallint" Nullable="false" />
+          <Property Name="AmPmStatus" Type="smallint" Nullable="false" />
+          <Property Name="CashPartStatus" Type="int" Nullable="false" />
+          <Property Name="LabPaperCode3PartCode" Type="nvarchar" MaxLength="2" />
+          <Property Name="PrgCodeAssign" Type="smallint" />
+          <Property Name="PartNameSummary" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="isAcceptOrder" Type="bit" Nullable="false" />
+          <Property Name="BimehDiskPartOrder" Type="smallint" Nullable="false" />
+          <Property Name="BimehLinkDrugCode" Type="int" Nullable="false" />
+          <Property Name="IsAcceptEmerg" Type="bit" Nullable="false" />
+          <Property Name="IsSuppress" Type="bit" Nullable="false" />
+          <Property Name="PartGroupCode" Type="smallint" Nullable="false" />
+          <Property Name="MaxServiceCountInPaper" Type="smallint" Nullable="false" />
+          <Property Name="PartGroupCode2" Type="smallint" Nullable="false" />
+          <Property Name="SepasPartCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="DwPartCode" Type="smallint" Nullable="false" />
+          <Property Name="HusbandDataMandatory" Type="bit" Nullable="false" />
+          <Property Name="IsYaranehVisit" Type="bit" Nullable="false" />
+          <Property Name="IsIncomeHide" Type="bit" Nullable="false" />
+          <Property Name="AccessWardGroupCode" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Shafa.dbo.EMRCardiologyView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EMRCardiologyView">
+          <Key>
+            <PropertyRef Name="ID Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Family" />
+          </Key>
+          <Property Name="ID Code" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Family" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NationalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Adm Code" Type="int" />
+          <Property Name="Part Code" Type="smallint" />
+          <Property Name="Date" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Shafa.dbo.EMRDigestionView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EMRDigestionView">
+          <Key>
+            <PropertyRef Name="ID Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Family" />
+          </Key>
+          <Property Name="ID Code" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Family" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NationalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Adm Code" Type="int" />
+          <Property Name="Part Code" Type="smallint" />
+          <Property Name="Date" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Shafa.dbo.EMRInternalView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EMRInternalView">
+          <Key>
+            <PropertyRef Name="ID Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Family" />
+          </Key>
+          <Property Name="ID Code" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Family" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NationalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Adm Code" Type="int" />
+          <Property Name="Part Code" Type="smallint" />
+          <Property Name="Date" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Shafa.dbo.EMRLungView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EMRLungView">
+          <Key>
+            <PropertyRef Name="ID Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Family" />
+          </Key>
+          <Property Name="ID Code" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Family" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NationalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Adm Code" Type="int" />
+          <Property Name="Part Code" Type="smallint" />
+          <Property Name="Date" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Shafa.dbo.EMRWomanView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EMRWomanView">
+          <Key>
+            <PropertyRef Name="ID Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Family" />
+          </Key>
+          <Property Name="ID Code" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Family" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NationalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Adm Code" Type="int" />
+          <Property Name="Part Code" Type="smallint" />
+          <Property Name="Date" Type="nvarchar" MaxLength="16" />
+        </EntityType>
+        <Association Name="FK_AdmData_AdmID">
+          <End Role="AdmID" Type="Self.AdmID" Multiplicity="1" />
+          <End Role="AdmData" Type="Self.AdmData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdmID">
+              <PropertyRef Name="ID Code" />
+            </Principal>
+            <Dependent Role="AdmData">
+              <PropertyRef Name="ID Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdmData_Part-List2">
+          <End Role="Part-List" Type="Self.Part-List" Multiplicity="1" />
+          <End Role="AdmData" Type="Self.AdmData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Part-List">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="AdmData">
+              <PropertyRef Name="Part Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HISDBModelStoreContainer">
+          <EntitySet Name="AdmData" EntityType="Self.AdmData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdmID" EntityType="Self.AdmID" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Part-List" EntityType="Self.Part-List" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMRCardiologyView" EntityType="Self.EMRCardiologyView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EMRCardiologyView].[ID Code] AS [ID Code], 
+    [EMRCardiologyView].[Name] AS [Name], 
+    [EMRCardiologyView].[Family] AS [Family], 
+    [EMRCardiologyView].[NationalCode] AS [NationalCode], 
+    [EMRCardiologyView].[Adm Code] AS [Adm Code], 
+    [EMRCardiologyView].[Part Code] AS [Part Code], 
+    [EMRCardiologyView].[Date] AS [Date]
+    FROM [dbo].[EMRCardiologyView] AS [EMRCardiologyView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EMRDigestionView" EntityType="Self.EMRDigestionView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EMRDigestionView].[ID Code] AS [ID Code], 
+    [EMRDigestionView].[Name] AS [Name], 
+    [EMRDigestionView].[Family] AS [Family], 
+    [EMRDigestionView].[NationalCode] AS [NationalCode], 
+    [EMRDigestionView].[Adm Code] AS [Adm Code], 
+    [EMRDigestionView].[Part Code] AS [Part Code], 
+    [EMRDigestionView].[Date] AS [Date]
+    FROM [dbo].[EMRDigestionView] AS [EMRDigestionView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EMRInternalView" EntityType="Self.EMRInternalView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EMRInternalView].[ID Code] AS [ID Code], 
+    [EMRInternalView].[Name] AS [Name], 
+    [EMRInternalView].[Family] AS [Family], 
+    [EMRInternalView].[NationalCode] AS [NationalCode], 
+    [EMRInternalView].[Adm Code] AS [Adm Code], 
+    [EMRInternalView].[Part Code] AS [Part Code], 
+    [EMRInternalView].[Date] AS [Date]
+    FROM [dbo].[EMRInternalView] AS [EMRInternalView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EMRLungView" EntityType="Self.EMRLungView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EMRLungView].[ID Code] AS [ID Code], 
+    [EMRLungView].[Name] AS [Name], 
+    [EMRLungView].[Family] AS [Family], 
+    [EMRLungView].[NationalCode] AS [NationalCode], 
+    [EMRLungView].[Adm Code] AS [Adm Code], 
+    [EMRLungView].[Part Code] AS [Part Code], 
+    [EMRLungView].[Date] AS [Date]
+    FROM [dbo].[EMRLungView] AS [EMRLungView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EMRWomanView" EntityType="Self.EMRWomanView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EMRWomanView].[ID Code] AS [ID Code], 
+    [EMRWomanView].[Name] AS [Name], 
+    [EMRWomanView].[Family] AS [Family], 
+    [EMRWomanView].[NationalCode] AS [NationalCode], 
+    [EMRWomanView].[Adm Code] AS [Adm Code], 
+    [EMRWomanView].[Part Code] AS [Part Code], 
+    [EMRWomanView].[Date] AS [Date]
+    FROM [dbo].[EMRWomanView] AS [EMRWomanView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AdmData_AdmID" Association="Self.FK_AdmData_AdmID">
+            <End Role="AdmID" EntitySet="AdmID" />
+            <End Role="AdmData" EntitySet="AdmData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdmData_Part-List2" Association="Self.FK_AdmData_Part-List2">
+            <End Role="Part-List" EntitySet="Part-List" />
+            <End Role="AdmData" EntitySet="AdmData" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HISDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ShafaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdmDatas" EntityType="HISDBModel.AdmData" />
+          <EntitySet Name="AdmIDs" EntityType="HISDBModel.AdmID" />
+          <EntitySet Name="Part_List" EntityType="HISDBModel.Part_List" />
+          <AssociationSet Name="FK_AdmData_AdmID" Association="HISDBModel.FK_AdmData_AdmID">
+            <End Role="AdmID" EntitySet="AdmIDs" />
+            <End Role="AdmData" EntitySet="AdmDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdmData_Part_List2" Association="HISDBModel.FK_AdmData_Part_List2">
+            <End Role="Part_List" EntitySet="Part_List" />
+            <End Role="AdmData" EntitySet="AdmDatas" />
+          </AssociationSet>
+          <EntitySet Name="EMRCardiologyViews" EntityType="HISDBModel.EMRCardiologyView" />
+          <EntitySet Name="EMRWomanViews" EntityType="HISDBModel.EMRWomanView" />
+          <EntitySet Name="EMRInternalViews" EntityType="HISDBModel.EMRInternalView" />
+          <EntitySet Name="EMRLungViews" EntityType="HISDBModel.EMRLungView" />
+          <EntitySet Name="EMRDigestionViews" EntityType="HISDBModel.EMRDigestionView" />
+        </EntityContainer>
+        <EntityType Name="AdmData">
+          <Key>
+            <PropertyRef Name="Adm_Code" />
+          </Key>
+          <Property Name="Adm_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Code" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Bast_Date" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PType" Type="Int16" Nullable="false" />
+          <Property Name="Bimeh_Code" Type="Int16" Nullable="false" />
+          <Property Name="Bimeh_Num" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Part_Code" Type="Int16" Nullable="false" />
+          <Property Name="Bed_Code" Type="Int16" />
+          <Property Name="isDis" Type="Boolean" Nullable="false" />
+          <Property Name="DisDate" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Bimeh2_Code" Type="Int16" Nullable="false" />
+          <Property Name="Bimeh2_Num" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Police" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Pers_Code" Type="Int16" Nullable="false" />
+          <Property Name="MName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MAdress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Dr_Code" Type="Int32" Nullable="false" />
+          <Property Name="From_Hospital_Code" Type="Int16" Nullable="false" />
+          <Property Name="To_Hospital_Code" Type="Int16" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="isBefore" Type="Boolean" Nullable="false" />
+          <Property Name="BeforeNum" Type="Int16" Nullable="false" />
+          <Property Name="BeforeBastNum" Type="Int16" Nullable="false" />
+          <Property Name="Diagnosis" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisPersonCode" Type="Int16" Nullable="false" />
+          <Property Name="DisType" Type="Int16" Nullable="false" />
+          <Property Name="DisAdvise" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BastDay" Type="Int16" Nullable="false" />
+          <Property Name="DieDate" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="DieTimeStatus" Type="Int16" Nullable="false" />
+          <Property Name="AutopsyNum" Type="Int16" Nullable="false" />
+          <Property Name="HelpNum" Type="Int16" Nullable="false" />
+          <Property Name="NewOprType" Type="Byte" Nullable="false" />
+          <Property Name="AdmWardCode" Type="Int16" Nullable="false" />
+          <Property Name="isBedAsign" Type="Boolean" Nullable="false" />
+          <Property Name="AgeGroup" Type="Int16" Nullable="false" />
+          <Property Name="isBedDis" Type="Boolean" Nullable="false" />
+          <Property Name="isMCard" Type="Boolean" Nullable="false" />
+          <Property Name="isEmerg" Type="Boolean" Nullable="false" />
+          <Property Name="MBimehCode" Type="Int16" Nullable="false" />
+          <Property Name="BimehEndDate" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="isBimehEndDate" Type="Boolean" Nullable="false" />
+          <Property Name="AdmPrePayPrice" Type="Int32" Nullable="false" />
+          <Property Name="HappenPlace" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int16" Nullable="false" />
+          <Property Name="AgeMon" Type="Int16" Nullable="false" />
+          <Property Name="AgeDay" Type="Byte" Nullable="false" />
+          <Property Name="isFix" Type="Boolean" Nullable="false" />
+          <Property Name="FixDate" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="FixPersCode" Type="Int16" Nullable="false" />
+          <Property Name="Adress2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isVIP" Type="Boolean" Nullable="false" />
+          <Property Name="PartServiceCode" Type="Int16" Nullable="false" />
+          <Property Name="MBimehNum" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="isEmergCard" Type="Boolean" Nullable="false" />
+          <Property Name="EmergCardNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BimehIntroStatus" Type="Int16" Nullable="false" />
+          <Property Name="BimehCtrlStatus" Type="Int16" Nullable="false" />
+          <Property Name="InDrCode" Type="Int32" Nullable="false" />
+          <Property Name="ReferType" Type="Int16" Nullable="false" />
+          <Property Name="BDate" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Bimeh3Code" Type="Int16" Nullable="false" />
+          <Property Name="Bimeh3Num" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DiagCode" Type="Int16" Nullable="false" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="MRelation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmergStatus" Type="Int16" Nullable="false" />
+          <Property Name="Height" Type="Double" />
+          <Property Name="Explain2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InsState" Type="Int16" Nullable="false" />
+          <Property Name="InsSendDate" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="InsRecDate" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="InsState2" Type="Int16" Nullable="false" />
+          <Property Name="InsSendDate2" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="InsRecDate2" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="BimehSerialNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AdmBimehPageNum" Type="Int16" />
+          <Property Name="ReferNDr" Type="Int32" Nullable="false" />
+          <Property Name="ReferCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BimehMandatoryType" Type="Int16" />
+          <Property Name="isNotAcceptYaraneh" Type="Boolean" Nullable="false" />
+          <Property Name="HamrahMobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SepasCompositionIDLab" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SepasCompositionIDBed" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SepasCompositionIDInpatient" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DisPersonalReason" Type="Int16" />
+          <Property Name="HusbandFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HusbandName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="HusbandNationalCode" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="BimehRelation" Type="Int16" />
+          <Property Name="BimehPersonCode" Type="Int16" />
+          <Property Name="CrisisStatus" Type="Int16" />
+          <Property Name="SepasCompositionIDDeath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DisBailOutExplain" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SBimehSerialNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PartCodeFirst" Type="Int16" Nullable="false" />
+          <Property Name="IsHistoryDone" Type="Boolean" />
+          <Property Name="DisOrderDate" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AdmID" Relationship="HISDBModel.FK_AdmData_AdmID" FromRole="AdmData" ToRole="AdmID" />
+          <NavigationProperty Name="Part_List" Relationship="HISDBModel.FK_AdmData_Part_List2" FromRole="AdmData" ToRole="Part_List" />
+        </EntityType>
+        <EntityType Name="AdmID">
+          <Key>
+            <PropertyRef Name="ID_Code" />
+          </Key>
+          <Property Name="ID_Code" Type="Int32" Nullable="false" />
+          <Property Name="Family" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Father" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="Int16" Nullable="false" />
+          <Property Name="ShNum" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Birth_Date" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Birth_Place" Type="Int32" Nullable="false" />
+          <Property Name="Sh_Place" Type="Int32" Nullable="false" />
+          <Property Name="Married_Code" Type="Int16" Nullable="false" />
+          <Property Name="Adress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Mazhab_Code" Type="Int16" Nullable="false" />
+          <Property Name="Work" Type="Int16" Nullable="false" />
+          <Property Name="Work_Place" Type="Int16" Nullable="false" />
+          <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="SFather" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EMailAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EmergCardNum" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BloodGroup" Type="Int16" />
+          <Property Name="CountryCode" Type="Int16" Nullable="false" />
+          <Property Name="DiseaseTag" Type="Int16" Nullable="false" />
+          <Property Name="Nationality" Type="Int16" Nullable="false" />
+          <Property Name="PatientUID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="StudyDegree" Type="Int16" Nullable="false" />
+          <Property Name="StayType" Type="Int16" Nullable="false" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="AdmDatas" Relationship="HISDBModel.FK_AdmData_AdmID" FromRole="AdmID" ToRole="AdmData" />
+        </EntityType>
+        <EntityType Name="Part_List">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Explain" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Group_Code" Type="Int16" Nullable="false" />
+          <Property Name="Type" Type="Int16" Nullable="false" />
+          <Property Name="PricePartCode" Type="Int16" Nullable="false" />
+          <Property Name="ADSCode" Type="Int16" Nullable="false" />
+          <Property Name="ADSBedCount" Type="Int16" Nullable="false" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FloorNo" Type="Int16" Nullable="false" />
+          <Property Name="ClinicGroupCode" Type="Int16" Nullable="false" />
+          <Property Name="LinkAcntCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LinkAcntHPartCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="isOpr" Type="Boolean" Nullable="false" />
+          <Property Name="isBabyAdm" Type="Boolean" Nullable="false" />
+          <Property Name="PercasePartCode" Type="Int16" Nullable="false" />
+          <Property Name="AmPmStatus" Type="Int16" Nullable="false" />
+          <Property Name="CashPartStatus" Type="Int32" Nullable="false" />
+          <Property Name="LabPaperCode3PartCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="PrgCodeAssign" Type="Int16" />
+          <Property Name="PartNameSummary" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isAcceptOrder" Type="Boolean" Nullable="false" />
+          <Property Name="BimehDiskPartOrder" Type="Int16" Nullable="false" />
+          <Property Name="BimehLinkDrugCode" Type="Int32" Nullable="false" />
+          <Property Name="IsAcceptEmerg" Type="Boolean" Nullable="false" />
+          <Property Name="IsSuppress" Type="Boolean" Nullable="false" />
+          <Property Name="PartGroupCode" Type="Int16" Nullable="false" />
+          <Property Name="MaxServiceCountInPaper" Type="Int16" Nullable="false" />
+          <Property Name="PartGroupCode2" Type="Int16" Nullable="false" />
+          <Property Name="SepasPartCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DwPartCode" Type="Int16" Nullable="false" />
+          <Property Name="HusbandDataMandatory" Type="Boolean" Nullable="false" />
+          <Property Name="IsYaranehVisit" Type="Boolean" Nullable="false" />
+          <Property Name="IsIncomeHide" Type="Boolean" Nullable="false" />
+          <Property Name="AccessWardGroupCode" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="AdmDatas" Relationship="HISDBModel.FK_AdmData_Part_List2" FromRole="Part_List" ToRole="AdmData" />
+        </EntityType>
+        <Association Name="FK_AdmData_AdmID">
+          <End Type="HISDBModel.AdmID" Role="AdmID" Multiplicity="1" />
+          <End Type="HISDBModel.AdmData" Role="AdmData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdmID">
+              <PropertyRef Name="ID_Code" />
+            </Principal>
+            <Dependent Role="AdmData">
+              <PropertyRef Name="ID_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdmData_Part_List2">
+          <End Type="HISDBModel.Part_List" Role="Part_List" Multiplicity="1" />
+          <End Type="HISDBModel.AdmData" Role="AdmData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Part_List">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="AdmData">
+              <PropertyRef Name="Part_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EMRCardiologyView">
+          <Key>
+            <PropertyRef Name="ID_Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Family" />
+          </Key>
+          <Property Name="ID_Code" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Family" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Adm_Code" Type="Int32" />
+          <Property Name="Part_Code" Type="Int16" />
+          <Property Name="Date" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EMRWomanView">
+          <Key>
+            <PropertyRef Name="ID_Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Family" />
+          </Key>
+          <Property Name="ID_Code" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Family" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Adm_Code" Type="Int32" />
+          <Property Name="Part_Code" Type="Int16" />
+          <Property Name="Date" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EMRInternalView">
+          <Key>
+            <PropertyRef Name="ID_Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Family" />
+          </Key>
+          <Property Name="ID_Code" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Family" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Adm_Code" Type="Int32" />
+          <Property Name="Part_Code" Type="Int16" />
+          <Property Name="Date" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EMRLungView">
+          <Key>
+            <PropertyRef Name="ID_Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Family" />
+          </Key>
+          <Property Name="ID_Code" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Family" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Adm_Code" Type="Int32" />
+          <Property Name="Part_Code" Type="Int16" />
+          <Property Name="Date" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EMRDigestionView">
+          <Key>
+            <PropertyRef Name="ID_Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Family" />
+          </Key>
+          <Property Name="ID_Code" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Family" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Adm_Code" Type="Int32" />
+          <Property Name="Part_Code" Type="Int16" />
+          <Property Name="Date" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HISDBModelStoreContainer" CdmEntityContainer="ShafaEntities">
+          <EntitySetMapping Name="AdmDatas">
+            <EntityTypeMapping TypeName="HISDBModel.AdmData">
+              <MappingFragment StoreEntitySet="AdmData">
+                <ScalarProperty Name="DisOrderDate" ColumnName="DisOrderDate" />
+                <ScalarProperty Name="IsHistoryDone" ColumnName="IsHistoryDone" />
+                <ScalarProperty Name="PartCodeFirst" ColumnName="PartCodeFirst" />
+                <ScalarProperty Name="SBimehSerialNo" ColumnName="SBimehSerialNo" />
+                <ScalarProperty Name="DisBailOutExplain" ColumnName="DisBailOutExplain" />
+                <ScalarProperty Name="SepasCompositionIDDeath" ColumnName="SepasCompositionIDDeath" />
+                <ScalarProperty Name="CrisisStatus" ColumnName="CrisisStatus" />
+                <ScalarProperty Name="BimehPersonCode" ColumnName="BimehPersonCode" />
+                <ScalarProperty Name="BimehRelation" ColumnName="BimehRelation" />
+                <ScalarProperty Name="HusbandNationalCode" ColumnName="HusbandNationalCode" />
+                <ScalarProperty Name="HusbandName" ColumnName="HusbandName" />
+                <ScalarProperty Name="HusbandFamily" ColumnName="HusbandFamily" />
+                <ScalarProperty Name="DisPersonalReason" ColumnName="DisPersonalReason" />
+                <ScalarProperty Name="SepasCompositionIDInpatient" ColumnName="SepasCompositionIDInpatient" />
+                <ScalarProperty Name="SepasCompositionIDBed" ColumnName="SepasCompositionIDBed" />
+                <ScalarProperty Name="SepasCompositionIDLab" ColumnName="SepasCompositionIDLab" />
+                <ScalarProperty Name="HamrahMobileNo" ColumnName="HamrahMobileNo" />
+                <ScalarProperty Name="isNotAcceptYaraneh" ColumnName="isNotAcceptYaraneh" />
+                <ScalarProperty Name="BimehMandatoryType" ColumnName="BimehMandatoryType" />
+                <ScalarProperty Name="ReferCode" ColumnName="ReferCode" />
+                <ScalarProperty Name="ReferNDr" ColumnName="ReferNDr" />
+                <ScalarProperty Name="AdmBimehPageNum" ColumnName="AdmBimehPageNum" />
+                <ScalarProperty Name="BimehSerialNo" ColumnName="BimehSerialNo" />
+                <ScalarProperty Name="InsRecDate2" ColumnName="InsRecDate2" />
+                <ScalarProperty Name="InsSendDate2" ColumnName="InsSendDate2" />
+                <ScalarProperty Name="InsState2" ColumnName="InsState2" />
+                <ScalarProperty Name="InsRecDate" ColumnName="InsRecDate" />
+                <ScalarProperty Name="InsSendDate" ColumnName="InsSendDate" />
+                <ScalarProperty Name="InsState" ColumnName="InsState" />
+                <ScalarProperty Name="Explain2" ColumnName="Explain2" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="EmergStatus" ColumnName="EmergStatus" />
+                <ScalarProperty Name="MRelation" ColumnName="MRelation" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="DiagCode" ColumnName="DiagCode" />
+                <ScalarProperty Name="Bimeh3Num" ColumnName="Bimeh3Num" />
+                <ScalarProperty Name="Bimeh3Code" ColumnName="Bimeh3Code" />
+                <ScalarProperty Name="BDate" ColumnName="BDate" />
+                <ScalarProperty Name="ReferType" ColumnName="ReferType" />
+                <ScalarProperty Name="InDrCode" ColumnName="InDrCode" />
+                <ScalarProperty Name="BimehCtrlStatus" ColumnName="BimehCtrlStatus" />
+                <ScalarProperty Name="BimehIntroStatus" ColumnName="BimehIntroStatus" />
+                <ScalarProperty Name="EmergCardNum" ColumnName="EmergCardNum" />
+                <ScalarProperty Name="isEmergCard" ColumnName="isEmergCard" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="MBimehNum" ColumnName="MBimehNum" />
+                <ScalarProperty Name="PartServiceCode" ColumnName="PartServiceCode" />
+                <ScalarProperty Name="isVIP" ColumnName="isVIP" />
+                <ScalarProperty Name="Adress2" ColumnName="Adress2" />
+                <ScalarProperty Name="FixPersCode" ColumnName="FixPersCode" />
+                <ScalarProperty Name="FixDate" ColumnName="FixDate" />
+                <ScalarProperty Name="isFix" ColumnName="isFix" />
+                <ScalarProperty Name="AgeDay" ColumnName="AgeDay" />
+                <ScalarProperty Name="AgeMon" ColumnName="AgeMon" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="HappenPlace" ColumnName="HappenPlace" />
+                <ScalarProperty Name="AdmPrePayPrice" ColumnName="AdmPrePayPrice" />
+                <ScalarProperty Name="isBimehEndDate" ColumnName="isBimehEndDate" />
+                <ScalarProperty Name="BimehEndDate" ColumnName="BimehEndDate" />
+                <ScalarProperty Name="MBimehCode" ColumnName="MBimehCode" />
+                <ScalarProperty Name="isEmerg" ColumnName="isEmerg" />
+                <ScalarProperty Name="isMCard" ColumnName="isMCard" />
+                <ScalarProperty Name="isBedDis" ColumnName="isBedDis" />
+                <ScalarProperty Name="AgeGroup" ColumnName="AgeGroup" />
+                <ScalarProperty Name="isBedAsign" ColumnName="isBedAsign" />
+                <ScalarProperty Name="AdmWardCode" ColumnName="AdmWardCode" />
+                <ScalarProperty Name="NewOprType" ColumnName="NewOprType" />
+                <ScalarProperty Name="HelpNum" ColumnName="HelpNum" />
+                <ScalarProperty Name="AutopsyNum" ColumnName="AutopsyNum" />
+                <ScalarProperty Name="DieTimeStatus" ColumnName="DieTimeStatus" />
+                <ScalarProperty Name="DieDate" ColumnName="DieDate" />
+                <ScalarProperty Name="BastDay" ColumnName="BastDay" />
+                <ScalarProperty Name="DisAdvise" ColumnName="DisAdvise" />
+                <ScalarProperty Name="DisType" ColumnName="DisType" />
+                <ScalarProperty Name="DisPersonCode" ColumnName="DisPersonCode" />
+                <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+                <ScalarProperty Name="BeforeBastNum" ColumnName="BeforeBastNum" />
+                <ScalarProperty Name="BeforeNum" ColumnName="BeforeNum" />
+                <ScalarProperty Name="isBefore" ColumnName="isBefore" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="To_Hospital_Code" ColumnName="To Hospital Code" />
+                <ScalarProperty Name="From_Hospital_Code" ColumnName="From Hospital Code" />
+                <ScalarProperty Name="Dr_Code" ColumnName="Dr Code" />
+                <ScalarProperty Name="MAdress" ColumnName="MAdress" />
+                <ScalarProperty Name="MName" ColumnName="MName" />
+                <ScalarProperty Name="Pers_Code" ColumnName="Pers Code" />
+                <ScalarProperty Name="Police" ColumnName="Police" />
+                <ScalarProperty Name="Bimeh2_Num" ColumnName="Bimeh2 Num" />
+                <ScalarProperty Name="Bimeh2_Code" ColumnName="Bimeh2 Code" />
+                <ScalarProperty Name="DisDate" ColumnName="DisDate" />
+                <ScalarProperty Name="isDis" ColumnName="isDis" />
+                <ScalarProperty Name="Bed_Code" ColumnName="Bed Code" />
+                <ScalarProperty Name="Part_Code" ColumnName="Part Code" />
+                <ScalarProperty Name="Bimeh_Num" ColumnName="Bimeh Num" />
+                <ScalarProperty Name="Bimeh_Code" ColumnName="Bimeh Code" />
+                <ScalarProperty Name="PType" ColumnName="PType" />
+                <ScalarProperty Name="Bast_Date" ColumnName="Bast Date" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID_Code" ColumnName="ID Code" />
+                <ScalarProperty Name="Adm_Code" ColumnName="Adm Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdmIDs">
+            <EntityTypeMapping TypeName="HISDBModel.AdmID">
+              <MappingFragment StoreEntitySet="AdmID">
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="StayType" ColumnName="StayType" />
+                <ScalarProperty Name="StudyDegree" ColumnName="StudyDegree" />
+                <ScalarProperty Name="PatientUID" ColumnName="PatientUID" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="DiseaseTag" ColumnName="DiseaseTag" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+                <ScalarProperty Name="EmergCardNum" ColumnName="EmergCardNum" />
+                <ScalarProperty Name="EMailAddress" ColumnName="EMailAddress" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="SFather" ColumnName="SFather" />
+                <ScalarProperty Name="SName" ColumnName="SName" />
+                <ScalarProperty Name="SFamily" ColumnName="SFamily" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="Work_Place" ColumnName="Work Place" />
+                <ScalarProperty Name="Work" ColumnName="Work" />
+                <ScalarProperty Name="Mazhab_Code" ColumnName="Mazhab Code" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Married_Code" ColumnName="Married Code" />
+                <ScalarProperty Name="Sh_Place" ColumnName="Sh Place" />
+                <ScalarProperty Name="Birth_Place" ColumnName="Birth Place" />
+                <ScalarProperty Name="Birth_Date" ColumnName="Birth Date" />
+                <ScalarProperty Name="ShNum" ColumnName="ShNum" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Father" ColumnName="Father" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="ID_Code" ColumnName="ID Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Part_List">
+            <EntityTypeMapping TypeName="HISDBModel.Part_List">
+              <MappingFragment StoreEntitySet="Part-List">
+                <ScalarProperty Name="AccessWardGroupCode" ColumnName="AccessWardGroupCode" />
+                <ScalarProperty Name="IsIncomeHide" ColumnName="IsIncomeHide" />
+                <ScalarProperty Name="IsYaranehVisit" ColumnName="IsYaranehVisit" />
+                <ScalarProperty Name="HusbandDataMandatory" ColumnName="HusbandDataMandatory" />
+                <ScalarProperty Name="DwPartCode" ColumnName="DwPartCode" />
+                <ScalarProperty Name="SepasPartCode" ColumnName="SepasPartCode" />
+                <ScalarProperty Name="PartGroupCode2" ColumnName="PartGroupCode2" />
+                <ScalarProperty Name="MaxServiceCountInPaper" ColumnName="MaxServiceCountInPaper" />
+                <ScalarProperty Name="PartGroupCode" ColumnName="PartGroupCode" />
+                <ScalarProperty Name="IsSuppress" ColumnName="IsSuppress" />
+                <ScalarProperty Name="IsAcceptEmerg" ColumnName="IsAcceptEmerg" />
+                <ScalarProperty Name="BimehLinkDrugCode" ColumnName="BimehLinkDrugCode" />
+                <ScalarProperty Name="BimehDiskPartOrder" ColumnName="BimehDiskPartOrder" />
+                <ScalarProperty Name="isAcceptOrder" ColumnName="isAcceptOrder" />
+                <ScalarProperty Name="PartNameSummary" ColumnName="PartNameSummary" />
+                <ScalarProperty Name="PrgCodeAssign" ColumnName="PrgCodeAssign" />
+                <ScalarProperty Name="LabPaperCode3PartCode" ColumnName="LabPaperCode3PartCode" />
+                <ScalarProperty Name="CashPartStatus" ColumnName="CashPartStatus" />
+                <ScalarProperty Name="AmPmStatus" ColumnName="AmPmStatus" />
+                <ScalarProperty Name="PercasePartCode" ColumnName="PercasePartCode" />
+                <ScalarProperty Name="isBabyAdm" ColumnName="isBabyAdm" />
+                <ScalarProperty Name="isOpr" ColumnName="isOpr" />
+                <ScalarProperty Name="LinkAcntHPartCode" ColumnName="LinkAcntHPartCode" />
+                <ScalarProperty Name="LinkAcntCode" ColumnName="LinkAcntCode" />
+                <ScalarProperty Name="ClinicGroupCode" ColumnName="ClinicGroupCode" />
+                <ScalarProperty Name="FloorNo" ColumnName="FloorNo" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="ADSBedCount" ColumnName="ADSBedCount" />
+                <ScalarProperty Name="ADSCode" ColumnName="ADSCode" />
+                <ScalarProperty Name="PricePartCode" ColumnName="PricePartCode" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Group_Code" ColumnName="Group Code" />
+                <ScalarProperty Name="Explain" ColumnName="Explain" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMRCardiologyViews">
+            <EntityTypeMapping TypeName="HISDBModel.EMRCardiologyView">
+              <MappingFragment StoreEntitySet="EMRCardiologyView">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Part_Code" ColumnName="Part Code" />
+                <ScalarProperty Name="Adm_Code" ColumnName="Adm Code" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Code" ColumnName="ID Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMRWomanViews">
+            <EntityTypeMapping TypeName="HISDBModel.EMRWomanView">
+              <MappingFragment StoreEntitySet="EMRWomanView">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Part_Code" ColumnName="Part Code" />
+                <ScalarProperty Name="Adm_Code" ColumnName="Adm Code" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Code" ColumnName="ID Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMRInternalViews">
+            <EntityTypeMapping TypeName="HISDBModel.EMRInternalView">
+              <MappingFragment StoreEntitySet="EMRInternalView">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Part_Code" ColumnName="Part Code" />
+                <ScalarProperty Name="Adm_Code" ColumnName="Adm Code" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Code" ColumnName="ID Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMRLungViews">
+            <EntityTypeMapping TypeName="HISDBModel.EMRLungView">
+              <MappingFragment StoreEntitySet="EMRLungView">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Part_Code" ColumnName="Part Code" />
+                <ScalarProperty Name="Adm_Code" ColumnName="Adm Code" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Code" ColumnName="ID Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMRDigestionViews">
+            <EntityTypeMapping TypeName="HISDBModel.EMRDigestionView">
+              <MappingFragment StoreEntitySet="EMRDigestionView">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Part_Code" ColumnName="Part Code" />
+                <ScalarProperty Name="Adm_Code" ColumnName="Adm Code" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Code" ColumnName="ID Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

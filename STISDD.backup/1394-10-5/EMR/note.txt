@@ -1,0 +1,49 @@
+﻿۱- تغییر در پایگاه داده را در برنامه درمانگاه قلب حتما اعمال نمایم
+
+namespace EMR.Controllers
+{
+    public class VisitController : Controller
+    {
+        private EMRDBEntities db = new EMRDBEntities();
+
+        public ActionResult Index(int? patientId, int? clinicId)
+        {
+            var visits = db.Visits.Include(v => v.Collegian).Include(v => v.Doctor);
+            return View(visits);
+        }
+
+        [HttpGet]
+        public ActionResult MyVisit(int? clinicId, int? doctorId, int? collegianId)
+        {
+            //var visit = db.Admissions.Include(a => a.Patient).Join(db.Visits, adm => adm.AdmissionId, vis => vis.AdmissionId, (adm, vis) => new { vis.VisitId, adm.Patient.FullName });
+
+            //var visit = (from adm in db.Admissions.Include(a => a.Patient)
+            //             join vis in db.Visits on adm.AdmissionId equals vis.AdmissionId
+            //             where vis.DoctorId == doctorId || vis.CollegianId == collegianId
+            //             select new { vis.VisitId, adm.Patient.FullName }).ToList();
+
+            //return View(visit.ToList());   
+
+            //var visits = db.Visits.Include(v => v.Collegian).Include(v => v.Doctor).Include(v => v.Admission).Where(v => (v.DoctorId == doctorId || v.CollegianId == collegianId));
+            return View(db.Visits.ToList());
+        }        
+        
+    }
+}
+
+
+ /*        
+            var filterPatient = (from pat in db.Patients
+                                 join adm in db.Admissions on pat.PatientId equals adm.PatientId
+                                 where adm.ClinicId == clinicId
+                                 select pat).ToList();
+            Join(db.Visits, adm => adm.AdmissionId, vis => vis.AdmissionId, (adm, vis) => new { vis.VisitId, adm.Patient.FullName });
+            var patient = from ai in hisdb.AdmIDs
+                          join ad in hisdb.AdmDatas on ai.ID_Code equals ad.ID_Code
+                          where ad.Part_Code == clinicId
+                          select new {ai.ID_Code, ai.Name, ai.Family, ai.NationalCode, ad.Adm_Code, ad.FixDate  };            
+            var patient = hisdb.AdmIDs.Join(hisdb.AdmDatas, ai => ai.ID_Code, ad => ad.ID_Code, (ai, ad) => new { ai.ID_Code, ai.Name, ai.Family, ai.NationalCode });//.Where(x => x.Part_Code == clinicId);//, ai.AdmDatas.FirstOrDefault().Adm_Code, ai.AdmDatas.FirstOrDefault().FixDate, ai.AdmDatas.FirstOrDefault().Part_Code
+            var patient = hisdb.EMRCardiologyViews.ToList().Where(x=>x.Part_Code == 25);
+            var patient = hisdb.AdmIDs.Join(hisdb.AdmDatas, ai => ai.ID_Code, ad => ad.ID_Code, (ai, ad) => new { ai.ID_Code, ai.Name, ai.Family, ai.NationalCode });
+            var patientAdm = hisdb.AdmDatas.Include(ad => ad.AdmID).Where(x => x.Part_Code == clinicId).OrderByDescending(x => x.Adm_Code).Take(300).ToList();                                                
+            */        

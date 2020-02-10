@@ -1,0 +1,70 @@
+﻿@model EMR.Models.ChiefComplaint
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="myModalLabel">Chief Complaint Details</h4>
+</div>
+
+<div class="modal-body">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChestPain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChestPain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dyspnea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dyspnea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Syncope)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Syncope)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Palpitation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Palpitation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edema)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edema)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ETC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ETC)
+        </dd>
+    </dl>
+</div>
+<div class="modal-footer">
+    <button class="btn" data-dismiss="modal">Ok</button>
+</div>
+

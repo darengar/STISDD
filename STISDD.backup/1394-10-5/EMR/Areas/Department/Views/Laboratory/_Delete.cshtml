@@ -1,0 +1,237 @@
+﻿@model EMR.Models.Laboratory
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="myModalLabel">Are you sure you want to delete this Laboratory?</h4>
+</div>
+
+<div class="modal-body">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FBS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hb1AC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hb1AC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BUN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BUN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Na)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Na)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.K)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.K)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LDL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LDL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HDL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HDL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VitOHD3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VitOHD3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CTnI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CTnI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CKMB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CKMB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ALT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ALT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ALP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ALP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BiL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BiL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PSA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PSA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TSH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TSH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T3RU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T3RU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospitalization.HospitalizationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospitalization.HospitalizationId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit.VisitId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visit.VisitId)
+        </dd>
+
+    </dl> 
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">No</button>
+        <input class="btn btn-danger" type="submit" value="Yes" />
+    </div>
+}

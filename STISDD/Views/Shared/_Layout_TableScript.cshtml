@@ -1,0 +1,107 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*********************Menu********************************************************@
+    <link href="~/Content/Menu/styles.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+    
+    <title>@ViewBag.Title - پرونده الکترونیک بیماران</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/core.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+</head>
+<body>
+    
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            $("table tr:nth-child(even)").addClass("striped");
+
+            $("table").mouseover(swapThem).mouseout(swapThem);
+
+        });
+
+
+        function swapThem() {
+
+            $('tr').toggleClass('striped');
+        }
+
+    </script>
+    <style type="text/css">
+        body, td {
+            font-size: 14px;
+        }
+
+        table {
+            background-color: black;
+            border: 1px black solid;
+            border-collapse: collapse;
+            width: 1000px;
+        }
+
+        th {
+            border: 2px ridge maroon;
+            background-color: maroon;
+            color: white;
+            padding: 3px 12px;
+            font-size: 14px;
+        }
+
+        tr {
+            background-color: white;
+            margin: 1px;
+        }
+
+            tr.striped {
+                background-color: gold;
+            }
+
+        td {
+            padding: 1px 8px;
+            font-size: 14px;
+        }
+    </style>
+    @****************************table jquery************************@
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div id='cssmenu'>
+            <ul style="margin-right: 20px; font-weight:bolder; font-size:large;">
+                
+                <li><a href='~/Home/Index'><span>خانه</span></a></li>
+
+                <li><a href='~/Home/About'><span>درباره ما</span></a></li>
+
+                <li><a href='~/Home/Help'><span>راهنمای سایت</span></a></li>
+                <li>
+                    @Html.Partial("_LoginPartial")
+                </li>
+                              
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.ToString("yyyy") - برنامه پرونده الکترونیک بیماران دانشکده علوم پزشکی استان گلستان</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<EMR.Models.VitalSign>
+
+<div id='myModal' class='modal fade in'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">علائم حیاتی بیمار</div>
+    <div class="panel-body">
+        @Html.ActionLink("Add", "Create", "VitalSign", new { Area = "InPatient", visitId = ViewBag.VisitId }, new { data_modal = "", id = "btnCreate", @class = "btn btn-small btn-primary pull-right" })       
+    </div>
+    <table class="table table-bordered table-hover">
+        @foreach (var item in Model)
+        {
+            <tr>                
+                <td style="width:20px">                    
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Details", "Details", "VitalSign", new { Area="InPatient",  id = item.VitalSignId }, new { data_modal = "" })</li>
+                            <li>@Html.ActionLink("Edit", "Edit", "VitalSign", new { Area = "InPatient", id = item.VitalSignId }, new { data_modal = "" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Delete", "Delete", "VitalSign", new { Area = "InPatient", id = item.VitalSignId }, new { data_modal = "" })</li>
+                        </ul>
+                    </div>
+                </td>                               
+                <td>
+                    @Html.Label("LeadTime", item.LeadTime.ToString()) &nbsp;|&nbsp; @Html.Label("HR", item.HR)                      
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="panel-footer">Count = @Model.Count()</div>
+</div>

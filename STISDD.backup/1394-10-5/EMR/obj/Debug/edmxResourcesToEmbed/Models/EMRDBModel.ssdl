@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMRDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admissions">
+    <Key>
+      <PropertyRef Name="AdmissionId" />
+    </Key>
+    <Property Name="AdmissionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientId" Type="int" />
+    <Property Name="ClinicId" Type="int" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="DateOfStay" Type="date" />
+  </EntityType>
+  <EntityType Name="Cardiologys">
+    <Key>
+      <PropertyRef Name="CardiologyId" />
+    </Key>
+    <Property Name="CardiologyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitId" Type="int" />
+    <Property Name="HospitalizationId" Type="int" />
+    <Property Name="LeadTime" Type="datetime" />
+    <Property Name="ECG" Type="ntext" />
+    <Property Name="Echocardiography" Type="ntext" />
+    <Property Name="Angiography" Type="ntext" />
+    <Property Name="PCI" Type="ntext" />
+    <Property Name="EST" Type="ntext" />
+    <Property Name="SPECTMPI" Type="ntext" />
+    <Property Name="Diagnosis" Type="ntext" />
+    <Property Name="Plan" Type="ntext" />
+    <Property Name="Assistant" Type="nvarchar" MaxLength="50" />
+    <Property Name="Intern" Type="nvarchar" MaxLength="50" />
+    <Property Name="Trainee" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ChiefComplaints">
+    <Key>
+      <PropertyRef Name="ChiefComplaintId" />
+    </Key>
+    <Property Name="ChiefComplaintId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitId" Type="int" />
+    <Property Name="HospitalizationId" Type="int" />
+    <Property Name="LeadTime" Type="datetime" />
+    <Property Name="ChestPain" Type="ntext" />
+    <Property Name="Dyspnea" Type="ntext" />
+    <Property Name="Syncope" Type="ntext" />
+    <Property Name="Palpitation" Type="ntext" />
+    <Property Name="Edema" Type="ntext" />
+    <Property Name="ETC" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Clinics">
+    <Key>
+      <PropertyRef Name="ClinicId" />
+    </Key>
+    <Property Name="ClinicId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HospitalId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Collegians">
+    <Key>
+      <PropertyRef Name="CollegianId" />
+    </Key>
+    <Property Name="CollegianId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="25" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="76" StoreGeneratedPattern="Computed" />
+    <Property Name="StudentId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="CellPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="LoginId" Type="nvarchar" MaxLength="128" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HospitalId" Type="int" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Digestions">
+    <Key>
+      <PropertyRef Name="DigestionId" />
+    </Key>
+    <Property Name="DigestionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitId" Type="int" />
+    <Property Name="HospitalizationId" Type="int" />
+    <Property Name="LeadTime" Type="datetime" />
+    <Property Name="Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Doctors">
+    <Key>
+      <PropertyRef Name="DoctorId" />
+    </Key>
+    <Property Name="DoctorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HospitalId" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="25" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="76" StoreGeneratedPattern="Computed" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="CellPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoginId" Type="nvarchar" MaxLength="128" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="FollowUps">
+    <Key>
+      <PropertyRef Name="FollowUpId" />
+    </Key>
+    <Property Name="FollowUpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitId" Type="int" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="HistoryDiseases">
+    <Key>
+      <PropertyRef Name="HistoryDiseaseId" />
+    </Key>
+    <Property Name="HistoryDiseaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientId" Type="int" />
+    <Property Name="LeadTime" Type="datetime" />
+    <Property Name="Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Hospitalizations">
+    <Key>
+      <PropertyRef Name="HospitalizationId" />
+    </Key>
+    <Property Name="HospitalizationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientId" Type="int" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="AdmissionId" Type="int" />
+    <Property Name="DoctorId" Type="int" />
+    <Property Name="CollegianId" Type="int" />
+    <Property Name="DateOfStay" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Hospitals">
+    <Key>
+      <PropertyRef Name="HospitalId" />
+    </Key>
+    <Property Name="HospitalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Internals">
+    <Key>
+      <PropertyRef Name="InternalId" />
+    </Key>
+    <Property Name="InternalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitId" Type="int" />
+    <Property Name="HospitalizationId" Type="int" />
+    <Property Name="LeadTime" Type="datetime" />
+    <Property Name="Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Laboratories">
+    <Key>
+      <PropertyRef Name="LaboratoryId" />
+    </Key>
+    <Property Name="LaboratoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitId" Type="int" />
+    <Property Name="HospitalizationId" Type="int" />
+    <Property Name="LeadTime" Type="datetime" />
+    <Property Name="Mg" Type="nvarchar" MaxLength="50" />
+    <Property Name="FBS" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hb1AC" Type="nvarchar" MaxLength="50" />
+    <Property Name="BUN" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Na" Type="nvarchar" MaxLength="50" />
+    <Property Name="K" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ca" Type="nvarchar" MaxLength="50" />
+    <Property Name="Chol" Type="nvarchar" MaxLength="50" />
+    <Property Name="LDL" Type="nvarchar" MaxLength="50" />
+    <Property Name="HDL" Type="nvarchar" MaxLength="50" />
+    <Property Name="TG" Type="nvarchar" MaxLength="50" />
+    <Property Name="VitOHD3" Type="nvarchar" MaxLength="50" />
+    <Property Name="CTnI" Type="nvarchar" MaxLength="50" />
+    <Property Name="CKMB" Type="nvarchar" MaxLength="50" />
+    <Property Name="AST" Type="nvarchar" MaxLength="50" />
+    <Property Name="ALT" Type="nvarchar" MaxLength="50" />
+    <Property Name="ALP" Type="nvarchar" MaxLength="50" />
+    <Property Name="BiL" Type="nvarchar" MaxLength="50" />
+    <Property Name="PSA" Type="nvarchar" MaxLength="50" />
+    <Property Name="TSH" Type="nvarchar" MaxLength="50" />
+    <Property Name="T3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T4" Type="nvarchar" MaxLength="50" />
+    <Property Name="T3RU" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Lungs">
+    <Key>
+      <PropertyRef Name="LungId" />
+    </Key>
+    <Property Name="LungId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitId" Type="int" />
+    <Property Name="HospitalizationId" Type="int" />
+    <Property Name="LeadTime" Type="datetime" />
+    <Property Name="Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Patients">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="20" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="71" StoreGeneratedPattern="Computed" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="10" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="BloodGroup" Type="nvarchar" MaxLength="10" />
+    <Property Name="NationalId" Type="nvarchar" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="CellPhone" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="PhysicalExaminations">
+    <Key>
+      <PropertyRef Name="PhysicalExaminationId" />
+    </Key>
+    <Property Name="PhysicalExaminationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitId" Type="int" />
+    <Property Name="HospitalizationId" Type="int" />
+    <Property Name="LeadTime" Type="datetime" />
+    <Property Name="Heart" Type="ntext" />
+    <Property Name="Lung" Type="ntext" />
+    <Property Name="Extremities" Type="ntext" />
+    <Property Name="ETC" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Visits">
+    <Key>
+      <PropertyRef Name="VisitId" />
+    </Key>
+    <Property Name="VisitId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientId" Type="int" />
+    <Property Name="ClinicId" Type="int" />
+    <Property Name="AdmissionId" Type="int" />
+    <Property Name="DoctorId" Type="int" />
+    <Property Name="CollegianId" Type="int" />
+    <Property Name="DateOfStay" Type="datetime" />
+  </EntityType>
+  <EntityType Name="VitalSigns">
+    <Key>
+      <PropertyRef Name="VitalSignId" />
+    </Key>
+    <Property Name="VitalSignId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitId" Type="int" />
+    <Property Name="HospitalizationId" Type="int" />
+    <Property Name="LeadTime" Type="datetime" />
+    <Property Name="BP" Type="ntext" />
+    <Property Name="HR" Type="ntext" />
+    <Property Name="RR" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Womans">
+    <Key>
+      <PropertyRef Name="WomanId" />
+    </Key>
+    <Property Name="WomanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitId" Type="int" />
+    <Property Name="HospitalizationId" Type="int" />
+    <Property Name="LeadTime" Type="datetime" />
+    <Property Name="Dch" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lch" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ab" Type="nvarchar" MaxLength="50" />
+    <Property Name="P" Type="nvarchar" MaxLength="50" />
+    <Property Name="G" Type="nvarchar" MaxLength="50" />
+    <Property Name="BloodGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rh" Type="nvarchar" MaxLength="50" />
+    <Property Name="CaesareanNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="VantvnzNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="PreviousBirthWeight" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastPregnancy" Type="nvarchar" MaxLength="50" />
+    <Property Name="NaturalChildbirthNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EDCAccordingLMP" Type="nvarchar" MaxLength="50" />
+    <Property Name="EDCAccordingSonography" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstSonographyResult" Type="nvarchar" MaxLength="50" />
+    <Property Name="SecondSonographyResult" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstLabResult" Type="nvarchar" MaxLength="50" />
+    <Property Name="SecondLabResult" Type="nvarchar" MaxLength="50" />
+    <Property Name="PreviousPregnancyWeight" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stature" Type="nvarchar" MaxLength="50" />
+    <Property Name="BMI" Type="nvarchar" MaxLength="50" />
+    <Property Name="HistoryBreastDiseases" Type="nvarchar" MaxLength="50" />
+    <Property Name="HistoryTakingCertainMedications" Type="nvarchar" MaxLength="50" />
+    <Property Name="HistoryVaccination" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Admissions_Clinics">
+    <End Role="Clinics" Type="Self.Clinics" Multiplicity="0..1" />
+    <End Role="Admissions" Type="Self.Admissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clinics">
+        <PropertyRef Name="ClinicId" />
+      </Principal>
+      <Dependent Role="Admissions">
+        <PropertyRef Name="ClinicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Admissions_Departments">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="Admissions" Type="Self.Admissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="DepartmentId" />
+      </Principal>
+      <Dependent Role="Admissions">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Admissions_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="Admissions" Type="Self.Admissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="Admissions">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cardiologys_Hospitalizations">
+    <End Role="Hospitalizations" Type="Self.Hospitalizations" Multiplicity="0..1" />
+    <End Role="Cardiologys" Type="Self.Cardiologys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitalizations">
+        <PropertyRef Name="HospitalizationId" />
+      </Principal>
+      <Dependent Role="Cardiologys">
+        <PropertyRef Name="HospitalizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cardiologys_Visits">
+    <End Role="Visits" Type="Self.Visits" Multiplicity="0..1" />
+    <End Role="Cardiologys" Type="Self.Cardiologys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visits">
+        <PropertyRef Name="VisitId" />
+      </Principal>
+      <Dependent Role="Cardiologys">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiefComplaints_Hospitalizations">
+    <End Role="Hospitalizations" Type="Self.Hospitalizations" Multiplicity="0..1" />
+    <End Role="ChiefComplaints" Type="Self.ChiefComplaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitalizations">
+        <PropertyRef Name="HospitalizationId" />
+      </Principal>
+      <Dependent Role="ChiefComplaints">
+        <PropertyRef Name="HospitalizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiefComplaints_Visits">
+    <End Role="Visits" Type="Self.Visits" Multiplicity="0..1" />
+    <End Role="ChiefComplaints" Type="Self.ChiefComplaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visits">
+        <PropertyRef Name="VisitId" />
+      </Principal>
+      <Dependent Role="ChiefComplaints">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clinics_Hospitals">
+    <End Role="Hospitals" Type="Self.Hospitals" Multiplicity="0..1" />
+    <End Role="Clinics" Type="Self.Clinics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitals">
+        <PropertyRef Name="HospitalId" />
+      </Principal>
+      <Dependent Role="Clinics">
+        <PropertyRef Name="HospitalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Departments_Hospitals">
+    <End Role="Hospitals" Type="Self.Hospitals" Multiplicity="0..1" />
+    <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitals">
+        <PropertyRef Name="HospitalId" />
+      </Principal>
+      <Dependent Role="Departments">
+        <PropertyRef Name="HospitalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Digestions_Hospitalizations">
+    <End Role="Hospitalizations" Type="Self.Hospitalizations" Multiplicity="0..1" />
+    <End Role="Digestions" Type="Self.Digestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitalizations">
+        <PropertyRef Name="HospitalizationId" />
+      </Principal>
+      <Dependent Role="Digestions">
+        <PropertyRef Name="HospitalizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Digestions_Visits">
+    <End Role="Visits" Type="Self.Visits" Multiplicity="0..1" />
+    <End Role="Digestions" Type="Self.Digestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visits">
+        <PropertyRef Name="VisitId" />
+      </Principal>
+      <Dependent Role="Digestions">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctors_Hospitals">
+    <End Role="Hospitals" Type="Self.Hospitals" Multiplicity="0..1" />
+    <End Role="Doctors" Type="Self.Doctors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitals">
+        <PropertyRef Name="HospitalId" />
+      </Principal>
+      <Dependent Role="Doctors">
+        <PropertyRef Name="HospitalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FollowUps_Visits">
+    <End Role="Visits" Type="Self.Visits" Multiplicity="0..1" />
+    <End Role="FollowUps" Type="Self.FollowUps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visits">
+        <PropertyRef Name="VisitId" />
+      </Principal>
+      <Dependent Role="FollowUps">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hospitalizations_Collegians">
+    <End Role="Collegians" Type="Self.Collegians" Multiplicity="0..1" />
+    <End Role="Hospitalizations" Type="Self.Hospitalizations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Collegians">
+        <PropertyRef Name="CollegianId" />
+      </Principal>
+      <Dependent Role="Hospitalizations">
+        <PropertyRef Name="CollegianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hospitalizations_Doctors">
+    <End Role="Doctors" Type="Self.Doctors" Multiplicity="0..1" />
+    <End Role="Hospitalizations" Type="Self.Hospitalizations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctors">
+        <PropertyRef Name="DoctorId" />
+      </Principal>
+      <Dependent Role="Hospitalizations">
+        <PropertyRef Name="DoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Internals_Hospitalizations">
+    <End Role="Hospitalizations" Type="Self.Hospitalizations" Multiplicity="0..1" />
+    <End Role="Internals" Type="Self.Internals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitalizations">
+        <PropertyRef Name="HospitalizationId" />
+      </Principal>
+      <Dependent Role="Internals">
+        <PropertyRef Name="HospitalizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Internals_Visits">
+    <End Role="Visits" Type="Self.Visits" Multiplicity="0..1" />
+    <End Role="Internals" Type="Self.Internals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visits">
+        <PropertyRef Name="VisitId" />
+      </Principal>
+      <Dependent Role="Internals">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Laboratories_Hospitalizations">
+    <End Role="Hospitalizations" Type="Self.Hospitalizations" Multiplicity="0..1" />
+    <End Role="Laboratories" Type="Self.Laboratories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitalizations">
+        <PropertyRef Name="HospitalizationId" />
+      </Principal>
+      <Dependent Role="Laboratories">
+        <PropertyRef Name="HospitalizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Laboratories_Visits">
+    <End Role="Visits" Type="Self.Visits" Multiplicity="0..1" />
+    <End Role="Laboratories" Type="Self.Laboratories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visits">
+        <PropertyRef Name="VisitId" />
+      </Principal>
+      <Dependent Role="Laboratories">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lungs_Hospitalizations">
+    <End Role="Hospitalizations" Type="Self.Hospitalizations" Multiplicity="0..1" />
+    <End Role="Lungs" Type="Self.Lungs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitalizations">
+        <PropertyRef Name="HospitalizationId" />
+      </Principal>
+      <Dependent Role="Lungs">
+        <PropertyRef Name="HospitalizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lungs_Visits">
+    <End Role="Visits" Type="Self.Visits" Multiplicity="0..1" />
+    <End Role="Lungs" Type="Self.Lungs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visits">
+        <PropertyRef Name="VisitId" />
+      </Principal>
+      <Dependent Role="Lungs">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalExaminations_Hospitalizations">
+    <End Role="Hospitalizations" Type="Self.Hospitalizations" Multiplicity="0..1" />
+    <End Role="PhysicalExaminations" Type="Self.PhysicalExaminations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitalizations">
+        <PropertyRef Name="HospitalizationId" />
+      </Principal>
+      <Dependent Role="PhysicalExaminations">
+        <PropertyRef Name="HospitalizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhysicalExaminations_Visits">
+    <End Role="Visits" Type="Self.Visits" Multiplicity="0..1" />
+    <End Role="PhysicalExaminations" Type="Self.PhysicalExaminations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visits">
+        <PropertyRef Name="VisitId" />
+      </Principal>
+      <Dependent Role="PhysicalExaminations">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visits_Collegians">
+    <End Role="Collegians" Type="Self.Collegians" Multiplicity="0..1" />
+    <End Role="Visits" Type="Self.Visits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Collegians">
+        <PropertyRef Name="CollegianId" />
+      </Principal>
+      <Dependent Role="Visits">
+        <PropertyRef Name="CollegianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visits_Doctors">
+    <End Role="Doctors" Type="Self.Doctors" Multiplicity="0..1" />
+    <End Role="Visits" Type="Self.Visits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctors">
+        <PropertyRef Name="DoctorId" />
+      </Principal>
+      <Dependent Role="Visits">
+        <PropertyRef Name="DoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VitalSigns_Hospitalizations">
+    <End Role="Hospitalizations" Type="Self.Hospitalizations" Multiplicity="0..1" />
+    <End Role="VitalSigns" Type="Self.VitalSigns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitalizations">
+        <PropertyRef Name="HospitalizationId" />
+      </Principal>
+      <Dependent Role="VitalSigns">
+        <PropertyRef Name="HospitalizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VitalSigns_Visits">
+    <End Role="Visits" Type="Self.Visits" Multiplicity="0..1" />
+    <End Role="VitalSigns" Type="Self.VitalSigns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visits">
+        <PropertyRef Name="VisitId" />
+      </Principal>
+      <Dependent Role="VitalSigns">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Womans_Hospitalizations">
+    <End Role="Hospitalizations" Type="Self.Hospitalizations" Multiplicity="0..1" />
+    <End Role="Womans" Type="Self.Womans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospitalizations">
+        <PropertyRef Name="HospitalizationId" />
+      </Principal>
+      <Dependent Role="Womans">
+        <PropertyRef Name="HospitalizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Womens_Visits">
+    <End Role="Visits" Type="Self.Visits" Multiplicity="0..1" />
+    <End Role="Womans" Type="Self.Womans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visits">
+        <PropertyRef Name="VisitId" />
+      </Principal>
+      <Dependent Role="Womans">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EMRDBModelStoreContainer">
+    <EntitySet Name="Admissions" EntityType="Self.Admissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cardiologys" EntityType="Self.Cardiologys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChiefComplaints" EntityType="Self.ChiefComplaints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clinics" EntityType="Self.Clinics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Collegians" EntityType="Self.Collegians" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Digestions" EntityType="Self.Digestions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctors" EntityType="Self.Doctors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FollowUps" EntityType="Self.FollowUps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistoryDiseases" EntityType="Self.HistoryDiseases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hospitalizations" EntityType="Self.Hospitalizations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hospitals" EntityType="Self.Hospitals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Internals" EntityType="Self.Internals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Laboratories" EntityType="Self.Laboratories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lungs" EntityType="Self.Lungs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhysicalExaminations" EntityType="Self.PhysicalExaminations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visits" EntityType="Self.Visits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VitalSigns" EntityType="Self.VitalSigns" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Womans" EntityType="Self.Womans" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Admissions_Clinics" Association="Self.FK_Admissions_Clinics">
+      <End Role="Clinics" EntitySet="Clinics" />
+      <End Role="Admissions" EntitySet="Admissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Admissions_Departments" Association="Self.FK_Admissions_Departments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Admissions" EntitySet="Admissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Admissions_Patients" Association="Self.FK_Admissions_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Admissions" EntitySet="Admissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cardiologys_Hospitalizations" Association="Self.FK_Cardiologys_Hospitalizations">
+      <End Role="Hospitalizations" EntitySet="Hospitalizations" />
+      <End Role="Cardiologys" EntitySet="Cardiologys" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cardiologys_Visits" Association="Self.FK_Cardiologys_Visits">
+      <End Role="Visits" EntitySet="Visits" />
+      <End Role="Cardiologys" EntitySet="Cardiologys" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiefComplaints_Hospitalizations" Association="Self.FK_ChiefComplaints_Hospitalizations">
+      <End Role="Hospitalizations" EntitySet="Hospitalizations" />
+      <End Role="ChiefComplaints" EntitySet="ChiefComplaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiefComplaints_Visits" Association="Self.FK_ChiefComplaints_Visits">
+      <End Role="Visits" EntitySet="Visits" />
+      <End Role="ChiefComplaints" EntitySet="ChiefComplaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clinics_Hospitals" Association="Self.FK_Clinics_Hospitals">
+      <End Role="Hospitals" EntitySet="Hospitals" />
+      <End Role="Clinics" EntitySet="Clinics" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Departments_Hospitals" Association="Self.FK_Departments_Hospitals">
+      <End Role="Hospitals" EntitySet="Hospitals" />
+      <End Role="Departments" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Digestions_Hospitalizations" Association="Self.FK_Digestions_Hospitalizations">
+      <End Role="Hospitalizations" EntitySet="Hospitalizations" />
+      <End Role="Digestions" EntitySet="Digestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Digestions_Visits" Association="Self.FK_Digestions_Visits">
+      <End Role="Visits" EntitySet="Visits" />
+      <End Role="Digestions" EntitySet="Digestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctors_Hospitals" Association="Self.FK_Doctors_Hospitals">
+      <End Role="Hospitals" EntitySet="Hospitals" />
+      <End Role="Doctors" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FollowUps_Visits" Association="Self.FK_FollowUps_Visits">
+      <End Role="Visits" EntitySet="Visits" />
+      <End Role="FollowUps" EntitySet="FollowUps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hospitalizations_Collegians" Association="Self.FK_Hospitalizations_Collegians">
+      <End Role="Collegians" EntitySet="Collegians" />
+      <End Role="Hospitalizations" EntitySet="Hospitalizations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hospitalizations_Doctors" Association="Self.FK_Hospitalizations_Doctors">
+      <End Role="Doctors" EntitySet="Doctors" />
+      <End Role="Hospitalizations" EntitySet="Hospitalizations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Internals_Hospitalizations" Association="Self.FK_Internals_Hospitalizations">
+      <End Role="Hospitalizations" EntitySet="Hospitalizations" />
+      <End Role="Internals" EntitySet="Internals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Internals_Visits" Association="Self.FK_Internals_Visits">
+      <End Role="Visits" EntitySet="Visits" />
+      <End Role="Internals" EntitySet="Internals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Laboratories_Hospitalizations" Association="Self.FK_Laboratories_Hospitalizations">
+      <End Role="Hospitalizations" EntitySet="Hospitalizations" />
+      <End Role="Laboratories" EntitySet="Laboratories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Laboratories_Visits" Association="Self.FK_Laboratories_Visits">
+      <End Role="Visits" EntitySet="Visits" />
+      <End Role="Laboratories" EntitySet="Laboratories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lungs_Hospitalizations" Association="Self.FK_Lungs_Hospitalizations">
+      <End Role="Hospitalizations" EntitySet="Hospitalizations" />
+      <End Role="Lungs" EntitySet="Lungs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lungs_Visits" Association="Self.FK_Lungs_Visits">
+      <End Role="Visits" EntitySet="Visits" />
+      <End Role="Lungs" EntitySet="Lungs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalExaminations_Hospitalizations" Association="Self.FK_PhysicalExaminations_Hospitalizations">
+      <End Role="Hospitalizations" EntitySet="Hospitalizations" />
+      <End Role="PhysicalExaminations" EntitySet="PhysicalExaminations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhysicalExaminations_Visits" Association="Self.FK_PhysicalExaminations_Visits">
+      <End Role="Visits" EntitySet="Visits" />
+      <End Role="PhysicalExaminations" EntitySet="PhysicalExaminations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visits_Collegians" Association="Self.FK_Visits_Collegians">
+      <End Role="Collegians" EntitySet="Collegians" />
+      <End Role="Visits" EntitySet="Visits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visits_Doctors" Association="Self.FK_Visits_Doctors">
+      <End Role="Doctors" EntitySet="Doctors" />
+      <End Role="Visits" EntitySet="Visits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VitalSigns_Hospitalizations" Association="Self.FK_VitalSigns_Hospitalizations">
+      <End Role="Hospitalizations" EntitySet="Hospitalizations" />
+      <End Role="VitalSigns" EntitySet="VitalSigns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VitalSigns_Visits" Association="Self.FK_VitalSigns_Visits">
+      <End Role="Visits" EntitySet="Visits" />
+      <End Role="VitalSigns" EntitySet="VitalSigns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Womans_Hospitalizations" Association="Self.FK_Womans_Hospitalizations">
+      <End Role="Hospitalizations" EntitySet="Hospitalizations" />
+      <End Role="Womans" EntitySet="Womans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Womens_Visits" Association="Self.FK_Womens_Visits">
+      <End Role="Visits" EntitySet="Visits" />
+      <End Role="Womans" EntitySet="Womans" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

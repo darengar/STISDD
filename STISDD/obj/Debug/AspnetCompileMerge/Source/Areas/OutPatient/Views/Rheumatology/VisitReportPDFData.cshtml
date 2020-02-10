@@ -1,0 +1,344 @@
+﻿@model EMR.Areas.OutPatient.ViewModels.RheumatologyVisit
+
+<table>
+    <tr>
+        <td style="width: 70px; font-size: large; color: #4c6568; font-weight: 400;"> کلینیک : </td>
+        <td style="width: 200px; font-size: xx-large; color: #ea5858; font-weight: 600; float:right;"> @ViewBag.ClinicName </td>
+    </tr>
+    <tr>
+        <td style="width: 130px; font-size: large; color: #4c6568; font-weight: 400; ">گزارش معاینه بیمار :</td>
+        <td style="width: 250px; background-color: #82d1dc; font-size: xx-large; color: #ed1852; font-weight: 500; float: right; ">@ViewBag.PatientName</td>
+    </tr>
+</table>
+<br />
+
+@Html.Hidden("PatientId", new { ViewBag.PatientId })
+@Html.Hidden("ClinicId", new { ViewBag.ClinicId })
+@Html.Hidden("AdmissionId", new { ViewBag.AdmissionId })
+@Html.Hidden("VisitId", new { ViewBag.VisitId })
+
+<table border="1">
+    <tr>
+        <td colspan="10"></td>
+    </tr>
+    <tr>
+        @if (Model.HistoryDiseasVmp.Description != null)
+        {
+            <td colspan="10" style="color: blue;">PMH : </td>
+        }
+    </tr>
+    <tr>
+        @if (Model.HistoryDiseasVmp.Description != null)
+        {
+            <td>Description</td>
+            <td colspan="9" style="color:red;">@Model.HistoryDiseasVmp.Description</td>
+        }
+    </tr>
+    <tr>
+        @if (Model.ChiefComplaintVmp.ChestPain != null || Model.ChiefComplaintVmp.Dyspnea != null || Model.ChiefComplaintVmp.Syncope != null || Model.ChiefComplaintVmp.Palpitation != null || Model.ChiefComplaintVmp.Edema != null || Model.ChiefComplaintVmp.ETC != null)
+        {
+            <td colspan="10" style="color: blue;">CC : </td>
+        }
+    </tr>
+    <tr>
+        @if (Model.ChiefComplaintVmp.ChestPain != null)
+        {
+            <td>Chest Pain</td>
+            <td style="color:red;">@Model.ChiefComplaintVmp.ChestPain</td>
+        }
+        @if (Model.ChiefComplaintVmp.Dyspnea != null)
+        {
+            <td>Dyspnea</td>
+            <td style="color:red;">@Model.ChiefComplaintVmp.Dyspnea</td>
+        }
+        @if (Model.ChiefComplaintVmp.Syncope != null)
+        {
+            <td>Syncope</td>
+            <td style="color:red;">@Model.ChiefComplaintVmp.Syncope</td>
+        }
+        @if (Model.ChiefComplaintVmp.Palpitation != null)
+        {
+            <td>Palpitation</td>
+            <td style="color:red;">@Model.ChiefComplaintVmp.Palpitation</td>
+        }
+        @if (Model.ChiefComplaintVmp.Edema != null)
+        {
+            <td>Edema</td>
+            <td style="color:red;">@Model.ChiefComplaintVmp.Edema</td>
+        }
+    </tr>
+    <tr>
+        @if (Model.ChiefComplaintVmp.ETC != null)
+        {
+            <td>Etc</td>
+            <td colspan="9" style="color:red;">@Model.ChiefComplaintVmp.ETC</td>
+        }
+    </tr>
+    <tr>
+        @if (Model.PhysicalExaminationVmp.Heart != null || Model.PhysicalExaminationVmp.Lung != null || Model.PhysicalExaminationVmp.Extremities != null || Model.PhysicalExaminationVmp.ETC != null)
+        {
+            <td colspan="10" style="color: blue;">PhE : </td>
+        }
+    </tr>
+    <tr>
+        @if (Model.PhysicalExaminationVmp.Heart != null)
+        {
+            <td>Heart</td>
+            <td style="color:red;">@Model.PhysicalExaminationVmp.Heart</td>
+        }
+        @if (Model.PhysicalExaminationVmp.Lung != null)
+        {
+            <td>Lung</td>
+            <td style="color:red;">@Model.PhysicalExaminationVmp.Lung</td>
+        }
+        @if (Model.PhysicalExaminationVmp.Extremities != null)
+        {
+            <td>Ext</td>
+            <td style="color:red;">@Model.PhysicalExaminationVmp.Extremities</td>
+        }
+        @if (Model.PhysicalExaminationVmp.ETC != null)
+        {
+            <td>ETC</td>
+            <td colspan="3" style="color:red;">@Model.PhysicalExaminationVmp.ETC</td>
+        }
+    </tr>
+    <tr>
+        @if (Model.VitalSignVmp.BP != null || Model.VitalSignVmp.HR != null || Model.VitalSignVmp.RR != null)
+        {
+            <td colspan="10" style="color: blue;">VS : </td>
+        }
+    </tr>
+    <tr>
+        @if (Model.VitalSignVmp.BP != null)
+        {
+            <td>BP</td>
+            <td style="color:red;">@Model.VitalSignVmp.BP</td>
+        }
+        @if (Model.VitalSignVmp.HR != null)
+        {
+            <td>HR</td>
+            <td style="color:red;">@Model.VitalSignVmp.HR</td>
+        }
+        @if (Model.VitalSignVmp.RR != null)
+        {
+            <td>RR</td>
+            <td colspan="5" style="color:red;">@Model.VitalSignVmp.RR</td>
+        }
+    </tr>
+    <tr>
+        @if (Model.LaboratoryVmp.BUN != null || Model.LaboratoryVmp.Cr != null || Model.LaboratoryVmp.Na != null
+            || Model.LaboratoryVmp.K != null || Model.LaboratoryVmp.Ca != null || Model.LaboratoryVmp.Mg != null
+            || Model.LaboratoryVmp.FBS != null || Model.LaboratoryVmp.Hb1AC != null || Model.LaboratoryVmp.Chol != null
+            || Model.LaboratoryVmp.LDL != null || Model.LaboratoryVmp.HDL != null || Model.LaboratoryVmp.TG != null
+            || Model.LaboratoryVmp.VitOHD3 != null || Model.LaboratoryVmp.CTnI != null || Model.LaboratoryVmp.CKMB != null
+            || Model.LaboratoryVmp.AST != null || Model.LaboratoryVmp.ALT != null || Model.LaboratoryVmp.ALP != null
+            || Model.LaboratoryVmp.BiL != null || Model.LaboratoryVmp.PSA != null || Model.LaboratoryVmp.TSH != null
+            || Model.LaboratoryVmp.T3 != null || Model.LaboratoryVmp.T4 != null || Model.LaboratoryVmp.T3 != null)
+        {
+            <td colspan="10" style="color: blue;">LAB : </td>
+        }
+    </tr>
+    <tr>
+        @if (Model.LaboratoryVmp.BUN != null)
+        {
+            <td>BUN</td>
+            <td style="color:red;">@Model.LaboratoryVmp.BUN</td>
+        }
+        @if (Model.LaboratoryVmp.Cr != null)
+        {
+            <td>Cr</td>
+            <td style="color:red;">@Model.LaboratoryVmp.Cr</td>
+        }
+        @if (Model.LaboratoryVmp.Na != null)
+        {
+            <td>Na</td>
+            <td style="color:red;">@Model.LaboratoryVmp.Na</td>
+        }
+
+        @if (Model.LaboratoryVmp.K != null)
+        {
+            <td>K</td>
+            <td style="color:red;">@Model.LaboratoryVmp.K</td>
+        }
+
+        @if (Model.LaboratoryVmp.Ca != null)
+        {
+            <td>Ca</td>
+            <td style="color:red;">@Model.LaboratoryVmp.Ca</td>
+        }
+
+    </tr>
+    <tr>
+        @if (Model.LaboratoryVmp.Mg != null)
+        {
+            <td>Mg</td>
+            <td style="color:red;">@Model.LaboratoryVmp.Mg</td>
+        }
+        @if (Model.LaboratoryVmp.FBS != null)
+        {
+            <td>FBS</td>
+            <td style="color:red;">@Model.LaboratoryVmp.FBS</td>
+        }
+        @if (Model.LaboratoryVmp.Hb1AC != null)
+        {
+            <td>Hb1AC</td>
+            <td style="color:red;">@Model.LaboratoryVmp.Hb1AC</td>
+        }
+        @if (Model.LaboratoryVmp.Chol != null)
+        {
+            <td>Chol</td>
+            <td style="color:red;">@Model.LaboratoryVmp.Chol</td>
+        }
+        @if (Model.LaboratoryVmp.LDL != null)
+        {
+            <td>LDL</td>
+            <td style="color:red;">@Model.LaboratoryVmp.LDL</td>
+        }
+    </tr>
+    <tr>
+        @if (Model.LaboratoryVmp.HDL != null)
+        {
+            <td>HDL</td>
+            <td style="color:red;">@Model.LaboratoryVmp.HDL</td>
+        }
+        @if (Model.LaboratoryVmp.TG != null)
+        {
+            <td>TG</td>
+            <td style="color:red;">@Model.LaboratoryVmp.TG</td>
+        }
+        @if (Model.LaboratoryVmp.VitOHD3 != null)
+        {
+            <td>VitOHD3</td>
+            <td style="color:red;">@Model.LaboratoryVmp.VitOHD3</td>
+        }
+        @if (Model.LaboratoryVmp.CTnI != null)
+        {
+            <td>CTnI</td>
+            <td style="color:red;">@Model.LaboratoryVmp.CTnI</td>
+        }
+        @if (Model.LaboratoryVmp.CKMB != null)
+        {
+            <td>CKMB</td>
+            <td style="color:red;">@Model.LaboratoryVmp.CKMB</td>
+        }
+    </tr>
+    <tr>
+        @if (Model.LaboratoryVmp.AST != null)
+        {
+            <td>AST</td>
+            <td style="color:red;">@Model.LaboratoryVmp.AST</td>
+        }
+        @if (Model.LaboratoryVmp.ALT != null)
+        {
+            <td>ALT</td>
+            <td style="color:red;">@Model.LaboratoryVmp.ALT</td>
+        }
+        @if (Model.LaboratoryVmp.ALP != null)
+        {
+            <td>ALP</td>
+            <td style="color:red;">@Model.LaboratoryVmp.ALP</td>
+        }
+        @if (Model.LaboratoryVmp.BiL != null)
+        {
+            <td>BiL</td>
+            <td style="color:red;">@Model.LaboratoryVmp.BiL</td>
+        }
+        @if (Model.LaboratoryVmp.PSA != null)
+        {
+            <td>PSA</td>
+            <td style="color:red;">@Model.LaboratoryVmp.PSA</td>
+        }
+    </tr>
+    <tr>
+        @if (Model.LaboratoryVmp.TSH != null)
+        {
+            <td>TSH</td>
+            <td style="color:red;">@Model.LaboratoryVmp.TSH</td>
+        }
+        @if (Model.LaboratoryVmp.T3 != null)
+        {
+            <td>T3</td>
+            <td style="color:red;">@Model.LaboratoryVmp.T3</td>
+        }
+        @if (Model.LaboratoryVmp.T4 != null)
+        {
+            <td>T4</td>
+            <td style="color:red;">@Model.LaboratoryVmp.T4</td>
+        }
+        @if (Model.LaboratoryVmp.T3 != null)
+        {
+            <td>T3RU</td>
+            <td colspan="3" style="color:red;">@Model.LaboratoryVmp.T3</td>
+        }
+    </tr>
+    @*<tr>
+            @if (Model.CardiologyVmp.ECG != null || Model.CardiologyVmp.Echocardiography != null || Model.CardiologyVmp.Angiography != null
+            || Model.CardiologyVmp.PCI != null || Model.CardiologyVmp.EST != null || Model.CardiologyVmp.SPECTMPI != null
+            || Model.CardiologyVmp.Diagnosis != null || Model.CardiologyVmp.Plan != null)
+            {
+                <td colspan="10" style="color: blue;">Heart :</td>
+            }
+        </tr>
+        <tr>
+            @if (Model.CardiologyVmp.ECG != null)
+            {
+                <td>ECG</td>
+                <td style="color:red;">@Model.CardiologyVmp.ECG</td>
+            }
+            @if (Model.CardiologyVmp.Echocardiography != null)
+            {
+                <td>Echocardiography</td>
+                <td style="color:red;">@Model.CardiologyVmp.Echocardiography</td>
+            }
+            @if (Model.CardiologyVmp.Angiography != null)
+            {
+                <td>Angiography</td>
+                <td style="color:red;">@Model.CardiologyVmp.Angiography</td>
+            }
+            @if (Model.CardiologyVmp.PCI != null)
+            {
+                <td>PCI</td>
+                <td style="color:red;">@Model.CardiologyVmp.PCI</td>
+            }
+            @if (Model.CardiologyVmp.EST != null)
+            {
+                <td>EST</td>
+                <td style="color:red;">@Model.CardiologyVmp.EST</td>
+            }
+            @if (Model.CardiologyVmp.SPECTMPI != null)
+            {
+                <td>SPECTMPI</td>
+                <td style="color:red;">@Model.CardiologyVmp.SPECTMPI</td>
+            }
+        </tr>
+        <tr>
+            @if (Model.CardiologyVmp.Diagnosis != null)
+            {
+                <td>Diagnosis</td>
+                <td colspan="3" style="color:red;">@Model.CardiologyVmp.Diagnosis</td>
+            }
+            @if (Model.CardiologyVmp.Plan != null)
+            {
+                <td>Plan</td>
+                <td colspan="5" style="color:red;">@Model.CardiologyVmp.Plan</td>
+            }
+        </tr>*@
+    <tr>
+        @if (Model.FollowUpVmp.Description != null || Model.FollowUpVmp.Date != null)
+        {
+            <td colspan="10" style="color: blue;">FollowUp : </td>
+        }
+    </tr>
+    <tr>
+        @if (Model.FollowUpVmp.Description != null)
+        {
+            <td>Description</td>
+            <td colspan="3" style="color:red;">@Model.FollowUpVmp.Description</td>
+        }
+        @if (Model.FollowUpVmp.Date != null)
+        {
+            <td>Date</td>
+            <td colspan="5" style="color:red;">@Model.FollowUpVmp.Date</td>
+        }
+    </tr>
+</table>
